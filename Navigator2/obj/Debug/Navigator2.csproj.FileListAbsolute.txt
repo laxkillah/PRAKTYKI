@@ -1,0 +1,4 @@
+C:\Users\mzdro\Source\Repos\laxkillah\PRAKTYKI\Navigator2\obj\Debug\Navigator2.csprojAssemblyReference.cache
+C:\Users\mzdro\Source\Repos\laxkillah\PRAKTYKI\Navigator2\obj\Debug\Navigator2.Properties.Resources.resources
+C:\Users\mzdro\Source\Repos\laxkillah\PRAKTYKI\Navigator2\obj\Debug\Navigator2.csproj.GenerateResource.cache
+C:\Users\mzdro\Source\Repos\laxkillah\PRAKTYKI\Navigator2\obj\Debug\Navigator2.csproj.CoreCompileInputs.cache
