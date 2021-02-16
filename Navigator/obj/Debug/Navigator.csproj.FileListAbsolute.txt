@@ -1,0 +1,10 @@
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\bin\Debug\Navigator.exe.config
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\bin\Debug\Navigator.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\bin\Debug\Navigator.pdb
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\obj\Debug\Navigator.csprojAssemblyReference.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\obj\Debug\Navigator.Form1.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\obj\Debug\Navigator.Properties.Resources.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\obj\Debug\Navigator.csproj.GenerateResource.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\obj\Debug\Navigator.csproj.CoreCompileInputs.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\obj\Debug\Navigator.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Navigator\obj\Debug\Navigator.pdb
