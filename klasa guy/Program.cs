@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Navigator2
+namespace klasa_guy
 {
     static class Program
     {
@@ -18,7 +18,5 @@ namespace Navigator2
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-        
-        
     }
 }
