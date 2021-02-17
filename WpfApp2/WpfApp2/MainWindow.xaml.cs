@@ -42,7 +42,7 @@ namespace WpfApp2
             int x = 10;
             if (x == 10)
             { 
-                myLabel.Text = "x musi być równe 10"; 
+                myLabel.Text = "x musi być równe 150"; 
             }
             else
             {
