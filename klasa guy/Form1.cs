@@ -22,13 +22,10 @@ namespace klasa_guy
         {
             InitializeComponent();
 
-            bob = new Guy();
-            bob.Name = "Bob";
-            bob.Cash = 100;
+            bob = new Guy() { Cash = 50, Name = "Bob" };
 
-            joe = new Guy();
-            joe.Name = "Joe";
-            joe.Cash = 50;
+            joe = new Guy() { Cash = 50, Name = "Joe" };
+            
 
             UpdateForm();
 
@@ -90,6 +87,18 @@ namespace klasa_guy
         private void button2_Click(object sender, EventArgs e)
         {
             bank += bob.GiveCash(5);
+            UpdateForm();
+        }
+
+        private void joeGivesToBob_Click(object sender, EventArgs e)
+        {
+            bob.ReceiveCash(joe.GiveCash(10));
+            UpdateForm();
+        }
+
+        private void bobGivesToJoe_Click(object sender, EventArgs e)
+        {
+            joe.ReceiveCash(bob.GiveCash(5));
             UpdateForm();
         }
     }

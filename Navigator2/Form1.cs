@@ -15,41 +15,50 @@ namespace Navigator2
         public Form1()
         {
             InitializeComponent();
+            string route = "Marszałkowska";
+            int distance1 = 5;
+            int distance2 = 3;
+            int distance3 = 9;
 
-            Navigator navigator1 = new Navigator();
-            navigator1.SetDestination("Skrzyżowanie Powstańców Warszawy i Legionów");
-            string route;
-            route = navigator1.GetRoute();
             string destination = textBox1.Text;
-            int distance1 = navigator1.TotalDistance();
+            Navigator navigator1 = new Navigator();
+            navigator1.SetDestination(destination);
+            navigator1.GetRoute(route);
+            navigator1.TotalDistance(distance1);
 
-            Navigator navigator2 = new Navigator();
-            navigator2.SetDestination("Skrzyżowanie Powstańców Warszawy i Legionów");
-            navigator2.ModifyRouteToAvoid("Ulica Kochanowskiego");
-            route = navigator2.GetRoute();
             string street = textBox2.Text;
-            int distance2 = navigator2.TotalDistance();
+            Navigator navigator2 = new Navigator();
+            navigator2.SetDestination(destination);
+            navigator2.ModifyRouteToAvoid(street);
+            navigator2.GetRoute(route);
+            navigator2.TotalDistance(distance2);
 
-
-            Navigator navigator3 = new Navigator();
-            navigator3.SetDestination("Skrzyżowanie Powstańców Warszawy i Legionów");
-            navigator3.ModifyRouteToInclude("Ulica Niebieska");
-            route = navigator3.GetRoute();
             string street2 = textBox3.Text;
-            int distance3 = navigator3.TotalDistance();
+            Navigator navigator3 = new Navigator();
+            navigator3.SetDestination(destination);
+            navigator3.ModifyRouteToInclude(street2);
+            navigator3.GetRoute(route);
+            navigator3.TotalDistance(distance3);
 
             int shortestDistance = Math.Min(distance1, Math.Min(distance2, distance3));
-            
+
+
+
         }
+        
+        
+        
+        
         class Navigator
         {
             public void SetCurrentLocation(string locationName) { }
             public void SetDestination(string destinationName) { }
+          
             public void ModifyRouteToAvoid(string streetName) { }
             public void ModifyRouteToInclude(string street2Name) { }
-            public string GetRoute(string route) { }
-            public int GetTimeToDestination { }
-            public int TotalDistance(int distance) 
+            public void GetRoute(string route) { }
+            public void GetTimeToDestination(int timeToDestination) { }
+            public void TotalDistance(int distance) 
             {
                
             }
@@ -57,26 +66,8 @@ namespace Navigator2
             
 
         }
-        class Navigator2
-        {
-            public void SetCurrentLocation(string locationName) { }
-            public void SetDestination(string destinationName) { }
-            public void ModifyRouteToAvoid(string streetName) { }
-            public void ModifyRouteToInclude(string streetName) { }
-            public string GetRoute(string route) { }
-            public int GetTimeToDestination { }
-            public int TotalDistance { }
-        }
-        class Navigator3
-        {
-            public void SetCurrentLocation(string locationName) { }
-            public void SetDestination(string destinationName) { }
-            public void ModifyRouteToAvoid(string streetName) { }
-            public void ModifyRouteToInclude(string streetName) { }
-            public string GetRoute(string route) { }
-            public int GetTimeToDestination { }
-            public int TotalDistance { }
-        }
+        
+        
             
 
             

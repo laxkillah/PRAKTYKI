@@ -34,11 +34,13 @@ namespace klasa_guy
             this.joesCashLabel = new System.Windows.Forms.TextBox();
             this.bobsCashLabel = new System.Windows.Forms.TextBox();
             this.bankCashLabel = new System.Windows.Forms.TextBox();
+            this.joeGivesToBob = new System.Windows.Forms.Button();
+            this.bobGivesToJoe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(137, 292);
+            this.button1.Location = new System.Drawing.Point(225, 180);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 74);
             this.button1.TabIndex = 0;
@@ -48,9 +50,9 @@ namespace klasa_guy
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(521, 292);
+            this.button2.Location = new System.Drawing.Point(466, 181);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(157, 73);
+            this.button2.Size = new System.Drawing.Size(165, 73);
             this.button2.TabIndex = 1;
             this.button2.Text = "Weź 5 zł od Boba";
             this.button2.UseVisualStyleBackColor = true;
@@ -80,11 +82,33 @@ namespace klasa_guy
             this.bankCashLabel.TabIndex = 4;
             this.bankCashLabel.Text = "Bank ma 100 zł";
             // 
+            // joeGivesToBob
+            // 
+            this.joeGivesToBob.Location = new System.Drawing.Point(225, 279);
+            this.joeGivesToBob.Name = "joeGivesToBob";
+            this.joeGivesToBob.Size = new System.Drawing.Size(169, 75);
+            this.joeGivesToBob.TabIndex = 5;
+            this.joeGivesToBob.Text = "Joe daje 10zł Bobowi";
+            this.joeGivesToBob.UseVisualStyleBackColor = true;
+            this.joeGivesToBob.Click += new System.EventHandler(this.joeGivesToBob_Click);
+            // 
+            // bobGivesToJoe
+            // 
+            this.bobGivesToJoe.Location = new System.Drawing.Point(466, 279);
+            this.bobGivesToJoe.Name = "bobGivesToJoe";
+            this.bobGivesToJoe.Size = new System.Drawing.Size(165, 75);
+            this.bobGivesToJoe.TabIndex = 6;
+            this.bobGivesToJoe.Text = "Bob daje 5 zł Joemu";
+            this.bobGivesToJoe.UseVisualStyleBackColor = true;
+            this.bobGivesToJoe.Click += new System.EventHandler(this.bobGivesToJoe_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bobGivesToJoe);
+            this.Controls.Add(this.joeGivesToBob);
             this.Controls.Add(this.bankCashLabel);
             this.Controls.Add(this.bobsCashLabel);
             this.Controls.Add(this.joesCashLabel);
@@ -104,6 +128,8 @@ namespace klasa_guy
         private System.Windows.Forms.TextBox joesCashLabel;
         private System.Windows.Forms.TextBox bobsCashLabel;
         private System.Windows.Forms.TextBox bankCashLabel;
+        private System.Windows.Forms.Button joeGivesToBob;
+        private System.Windows.Forms.Button bobGivesToJoe;
     }
 }
 
