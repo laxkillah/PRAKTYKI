@@ -47,5 +47,16 @@ namespace Typy_zmiennych
 
 
         }
+        public int MyMethod(bool yesNo)
+        {
+            if (yesNo)
+            {
+                return 45;
+            }
+            else
+            {
+                return 61;
+            }
+        }
     }
 }
