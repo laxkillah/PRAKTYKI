@@ -38,6 +38,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tablice", "tablice\tablice.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wyspy", "wyspy\wyspy.csproj", "{D2640EAD-9F4E-4065-A531-035BBE274EFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gra w literki", "Gra w literki\Gra w literki.csproj", "{55CD33B1-F732-4671-BEA9-2C7D2E60AF64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "odbijające etykiety", "odbijające etykiety\odbijające etykiety.csproj", "{5C785DC5-B741-416E-BC64-A82766B7F933}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +108,14 @@ Global
 		{D2640EAD-9F4E-4065-A531-035BBE274EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2640EAD-9F4E-4065-A531-035BBE274EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2640EAD-9F4E-4065-A531-035BBE274EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55CD33B1-F732-4671-BEA9-2C7D2E60AF64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CD33B1-F732-4671-BEA9-2C7D2E60AF64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55CD33B1-F732-4671-BEA9-2C7D2E60AF64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55CD33B1-F732-4671-BEA9-2C7D2E60AF64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C785DC5-B741-416E-BC64-A82766B7F933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C785DC5-B741-416E-BC64-A82766B7F933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C785DC5-B741-416E-BC64-A82766B7F933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C785DC5-B741-416E-BC64-A82766B7F933}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
