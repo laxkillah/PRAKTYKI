@@ -46,6 +46,6 @@ namespace kalkulator
         {
             MessageBox.Show(milesTraveled + " kilometrów", "Przebyta odległość");
         }
-        // 3 i 2 , 1 i 1, 1 i 1, 1 i 1, 0 i 0
+        
     }
 }

@@ -41,7 +41,7 @@ namespace wyspy
                 refNum = index[y];
                 result += "\nWyspa = ";
                 result += islands[refNum];
-                y = y + 1;
+                y += 1;
 
             }
             MessageBox.Show(result);

@@ -22,13 +22,6 @@ namespace Gra_w_literki
         }
         
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-            
-            
-        }
-
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (listBox1.Items.Contains(e.KeyCode))

@@ -25,11 +25,11 @@ namespace WpfApp2
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void Button1_Click(object sender, RoutedEventArgs e)
         {
             String name = "Quentin";
             int x = 3;
-            x = x * 17;
+            x *= 17;
             double d = Math.PI / 2;
             myLabel.Text = "nazwa to " + name
                 + "\nx jest równe " + x
@@ -37,7 +37,7 @@ namespace WpfApp2
 
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void Button2_Click(object sender, RoutedEventArgs e)
         {
             int x = 10;
             if (x == 10)
@@ -51,7 +51,7 @@ namespace WpfApp2
                 
         }
 
-        private void button3_Click(object sender, RoutedEventArgs e)
+        private void Button3_Click(object sender, RoutedEventArgs e)
         {
             int someValue = 3;
             string name = "Janek";
@@ -63,7 +63,7 @@ namespace WpfApp2
                 
         }
 
-        private void button4_Click(object sender, RoutedEventArgs e)
+        private void Button4_Click(object sender, RoutedEventArgs e)
         {
             int count = 0;
             while (count < 10)
@@ -73,7 +73,7 @@ namespace WpfApp2
             }
             for (int i = 0; i < 5; i++)
             {
-                count = count - 1;
+                count -= 1;
             }
 
             myLabel.Text = "Odpowiedź brzmi " + count;

@@ -26,25 +26,33 @@ namespace Clown
 
             public void TalkAboutYourself()
             {
-                MessageBox.Show("Nazywam się " + Name + "i mam " + Height + " centymetrów wzrostu.");
 
-                Clown oneClown = new Clown();
-                oneClown.Name = "Boffo";
-                oneClown.Height = 35;
+
+                Clown oneClown = new Clown
+                {
+                    Name = "Boffo",
+                    Height = 35
+                };
                 oneClown.TalkAboutYourself();
 
-                Clown anotherClown = new Clown();
-                anotherClown.Name = "Biff";
-                anotherClown.Height = 40;
+                Clown anotherClown = new Clown
+                {
+                    Name = "Biff",
+                    Height = 40
+                };
                 anotherClown.TalkAboutYourself();
 
-                Clown clown3 = new Clown();
-                clown3.Name = anotherClown.Name;
-                clown3.Height = oneClown.Height - 3;
+                Clown clown3 = new Clown
+                {
+                    Name = anotherClown.Name,
+                    Height = oneClown.Height - 3
+                };
                 clown3.TalkAboutYourself();
 
                 anotherClown.Height *= 2;
                 anotherClown.TalkAboutYourself();
+
+                MessageBox.Show("Nazywam się " + Name + "i mam " + Height + " centymetrów wzrostu.");
 
             }
 

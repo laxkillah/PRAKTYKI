@@ -30,28 +30,28 @@ namespace basen
 
             while (x < 4)
             {
-                poem = poem + "a";
+                poem += "a";
                 if (x < 1)
                 {
-                    poem = poem + " ";
+                    poem += " ";
                 }
-                poem = poem + "n";
+                poem += "n";
 
                 if (x > 1)
                 {
-                    poem = poem + " oyster";
+                    poem += " oyster";
                     x = x + 2;
                 }
                 if (x == 1)
                 {
-                    poem = poem + "noys ";
+                    poem += "noys ";
                 }
                 if (x < 1)
                 {
-                    poem = poem + "oise ";
+                    poem += "oise ";
                 }
 
-                x = x + 1;
+                x += 1;
             }
             output.Text = poem;
 

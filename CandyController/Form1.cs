@@ -27,35 +27,35 @@ namespace CandyController
         }
         public class CandyController
         {
-            public void DoMaintenanceTests()
-            {
-                if (IsNougatTooHot() == true)
-                {
-                    DoCICSVentProcedure();
-                }
-            }
-            public Boolean IsNougatTooHot()
-            {
-                int temp = Maker.CheckNougatTenoerature();
-                if (temp > 160)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-                
-            }
-            public void DoCICSVentProcedure()
-            {
-                Turbine turbineController = new Turbine();
-                turbineController.CloseTripValve(2);
-                IsolationCoolingSystem.Fill();
-                IsolationCoolingSystem.Vent();
-                Maker.CheckAirSystem();
-            }
-        
-        
+            //public void DoMaintenanceTests()
+            //{
+            //    if (IsNougatTooHot() == true)
+            //    {
+            //        DoCICSVentProcedure();
+            //    }
+            //}
+            //public Boolean IsNougatTooHot()
+            //{
+            //    int temp = Maker.CheckNougatTenoerature();
+            //    if (temp > 160)
+            //    {
+            //        return true;
+            //    }
+            //    else
+            //    {
+            //        return false;
+            //    }
+
+            //}
+            //public void DoCICSVentProcedure()
+            //{
+            //    Turbine turbineController = new Turbine();
+            //    turbineController.CloseTripValve(2);
+            //    IsolationCoolingSystem.Fill();
+            //    IsolationCoolingSystem.Vent();
+            //    Maker.CheckAirSystem();
+            //}
+
+        }
     }
 }

@@ -58,10 +58,8 @@ namespace Navigator2
             public void ModifyRouteToInclude(string street2Name) { }
             public void GetRoute(string route) { }
             public void GetTimeToDestination(int timeToDestination) { }
-            public void TotalDistance(int distance) 
-            {
-               
-            }
+            public void TotalDistance(int distance) { }
+            
 
             
 
