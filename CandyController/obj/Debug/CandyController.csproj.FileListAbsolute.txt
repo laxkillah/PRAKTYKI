@@ -1,0 +1,4 @@
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyController.csprojAssemblyReference.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyController.Properties.Resources.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyController.csproj.GenerateResource.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyController.csproj.CoreCompileInputs.cache

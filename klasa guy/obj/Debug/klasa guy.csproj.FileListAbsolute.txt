@@ -1,0 +1,10 @@
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\obj\Debug\klasa guy.csprojAssemblyReference.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\obj\Debug\klasa_guy.Form1.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\obj\Debug\klasa_guy.Properties.Resources.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\obj\Debug\klasa guy.csproj.GenerateResource.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\obj\Debug\klasa guy.csproj.CoreCompileInputs.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\bin\Debug\klasa guy.exe.config
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\bin\Debug\klasa guy.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\bin\Debug\klasa guy.pdb
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\obj\Debug\klasa guy.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\klasa guy\obj\Debug\klasa guy.pdb

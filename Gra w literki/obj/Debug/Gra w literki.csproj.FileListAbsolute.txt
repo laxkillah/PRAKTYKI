@@ -1,0 +1,10 @@
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\bin\Debug\Gra w literki.exe.config
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\bin\Debug\Gra w literki.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\bin\Debug\Gra w literki.pdb
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\obj\Debug\Gra w literki.csprojAssemblyReference.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\obj\Debug\Gra_w_literki.Form1.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\obj\Debug\Gra_w_literki.Properties.Resources.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\obj\Debug\Gra w literki.csproj.GenerateResource.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\obj\Debug\Gra w literki.csproj.CoreCompileInputs.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\obj\Debug\Gra w literki.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Gra w literki\obj\Debug\Gra w literki.pdb

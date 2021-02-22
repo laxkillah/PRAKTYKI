@@ -1,0 +1,10 @@
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\bin\Debug\odbijające etykiety.exe.config
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\bin\Debug\odbijające etykiety.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\bin\Debug\odbijające etykiety.pdb
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\obj\Debug\odbijające etykiety.csprojAssemblyReference.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\obj\Debug\odbijające_etykiety.Form1.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\obj\Debug\odbijające_etykiety.Properties.Resources.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\obj\Debug\odbijające etykiety.csproj.GenerateResource.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\obj\Debug\odbijające etykiety.csproj.CoreCompileInputs.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\obj\Debug\odbijające etykiety.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\odbijające etykiety\obj\Debug\odbijające etykiety.pdb

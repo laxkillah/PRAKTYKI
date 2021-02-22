@@ -1,0 +1,10 @@
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\bin\Debug\wyspy.exe.config
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\bin\Debug\wyspy.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\bin\Debug\wyspy.pdb
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\obj\Debug\wyspy.csprojAssemblyReference.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\obj\Debug\wyspy.Form1.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\obj\Debug\wyspy.Properties.Resources.resources
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\obj\Debug\wyspy.csproj.GenerateResource.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\obj\Debug\wyspy.csproj.CoreCompileInputs.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\obj\Debug\wyspy.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\wyspy\obj\Debug\wyspy.pdb
