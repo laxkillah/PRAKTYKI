@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gra w literki", "Gra w lite
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "odbijające etykiety", "odbijające etykiety\odbijające etykiety.csproj", "{5C785DC5-B741-416E-BC64-A82766B7F933}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Symulator wyścigów", "Symulator wyścigów\Symulator wyścigów.csproj", "{1EF3A2A2-3EB2-48C4-9D56-71BCE1611518}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -116,6 +118,10 @@ Global
 		{5C785DC5-B741-416E-BC64-A82766B7F933}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C785DC5-B741-416E-BC64-A82766B7F933}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C785DC5-B741-416E-BC64-A82766B7F933}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF3A2A2-3EB2-48C4-9D56-71BCE1611518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF3A2A2-3EB2-48C4-9D56-71BCE1611518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF3A2A2-3EB2-48C4-9D56-71BCE1611518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF3A2A2-3EB2-48C4-9D56-71BCE1611518}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
