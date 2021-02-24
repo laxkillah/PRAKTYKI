@@ -32,6 +32,9 @@ namespace Symulator_wyścigów
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.arekBetLabel = new System.Windows.Forms.Label();
+            this.bartekBetLabel = new System.Windows.Forms.Label();
+            this.janekBetLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,9 +49,6 @@ namespace Symulator_wyścigów
             this.arekRadioButton = new System.Windows.Forms.RadioButton();
             this.bartekRadioButton = new System.Windows.Forms.RadioButton();
             this.janekRadioButton = new System.Windows.Forms.RadioButton();
-            this.janekBetLabel = new System.Windows.Forms.Label();
-            this.bartekBetLabel = new System.Windows.Forms.Label();
-            this.arekBetLabel = new System.Windows.Forms.Label();
             this.racetrackPictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -90,6 +90,33 @@ namespace Symulator_wyścigów
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dom bukmacherski";
+            // 
+            // arekBetLabel
+            // 
+            this.arekBetLabel.AutoSize = true;
+            this.arekBetLabel.Location = new System.Drawing.Point(177, 109);
+            this.arekBetLabel.Name = "arekBetLabel";
+            this.arekBetLabel.Size = new System.Drawing.Size(29, 13);
+            this.arekBetLabel.TabIndex = 16;
+            this.arekBetLabel.Text = "Arek";
+            // 
+            // bartekBetLabel
+            // 
+            this.bartekBetLabel.AutoSize = true;
+            this.bartekBetLabel.Location = new System.Drawing.Point(177, 83);
+            this.bartekBetLabel.Name = "bartekBetLabel";
+            this.bartekBetLabel.Size = new System.Drawing.Size(38, 13);
+            this.bartekBetLabel.TabIndex = 15;
+            this.bartekBetLabel.Text = "Bartek";
+            // 
+            // janekBetLabel
+            // 
+            this.janekBetLabel.AutoSize = true;
+            this.janekBetLabel.Location = new System.Drawing.Point(177, 57);
+            this.janekBetLabel.Name = "janekBetLabel";
+            this.janekBetLabel.Size = new System.Drawing.Size(36, 13);
+            this.janekBetLabel.TabIndex = 14;
+            this.janekBetLabel.Text = "Janek";
             // 
             // startButton
             // 
@@ -203,9 +230,9 @@ namespace Symulator_wyścigów
             this.minimumBetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.minimumBetLabel.Location = new System.Drawing.Point(4, 26);
             this.minimumBetLabel.Name = "minimumBetLabel";
-            this.minimumBetLabel.Size = new System.Drawing.Size(104, 13);
+            this.minimumBetLabel.Size = new System.Drawing.Size(134, 13);
             this.minimumBetLabel.TabIndex = 3;
-            this.minimumBetLabel.Text = "minimumBetLabel";
+            this.minimumBetLabel.Text = "Stawka minimalna: 5zł";
             // 
             // arekRadioButton
             // 
@@ -242,33 +269,6 @@ namespace Symulator_wyścigów
             this.janekRadioButton.Text = "radioButton1";
             this.janekRadioButton.UseVisualStyleBackColor = true;
             this.janekRadioButton.CheckedChanged += new System.EventHandler(this.janekRadioButton_CheckedChanged);
-            // 
-            // janekBetLabel
-            // 
-            this.janekBetLabel.AutoSize = true;
-            this.janekBetLabel.Location = new System.Drawing.Point(177, 57);
-            this.janekBetLabel.Name = "janekBetLabel";
-            this.janekBetLabel.Size = new System.Drawing.Size(36, 13);
-            this.janekBetLabel.TabIndex = 14;
-            this.janekBetLabel.Text = "Janek";
-            // 
-            // bartekBetLabel
-            // 
-            this.bartekBetLabel.AutoSize = true;
-            this.bartekBetLabel.Location = new System.Drawing.Point(177, 83);
-            this.bartekBetLabel.Name = "bartekBetLabel";
-            this.bartekBetLabel.Size = new System.Drawing.Size(38, 13);
-            this.bartekBetLabel.TabIndex = 15;
-            this.bartekBetLabel.Text = "Bartek";
-            // 
-            // arekBetLabel
-            // 
-            this.arekBetLabel.AutoSize = true;
-            this.arekBetLabel.Location = new System.Drawing.Point(177, 109);
-            this.arekBetLabel.Name = "arekBetLabel";
-            this.arekBetLabel.Size = new System.Drawing.Size(29, 13);
-            this.arekBetLabel.TabIndex = 16;
-            this.arekBetLabel.Text = "Arek";
             // 
             // racetrackPictureBox
             // 
