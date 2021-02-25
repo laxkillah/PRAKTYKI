@@ -20,53 +20,53 @@ namespace hermetyzacja
 
 
     }
-    public class SecretAgent
-    {
-        private string realName;
-        private string alias;
-        private string password;
+    //public class SecretAgent
+    //{
+    //    //private string realName;
+    //    //private string alias;
+    //    //private string password;
 
-        public void AgentGreeting() //parametr password
-        {
+    //    public void AgentGreeting() //parametr password
+    //    {
 
-        }
-        SecretAgent ciaAgent = new SecretAgent();
-    }
-    public class EnemyAgent
-    {
-        public string Borscht;
-        public string Vodka;
+    //    }
+    //    SecretAgent ciaAgent = new SecretAgent();
+    //}
+    //public class EnemyAgent
+    //{
+    //    public string Borscht;
+    //    public string Vodka;
 
-        public void ContactComrades()
-        {
+    //    public void ContactComrades()
+    //    {
 
-        }
-        public void OverthrowCapitalists()
-        {
+    //    }
+    //    public void OverthrowCapitalists()
+    //    {
 
-        }
-        EnemyAgent kgbAgent = new EnemyAgent();
-    }
-    public class SuperChef
-    {
-        public string cookieRecipe;
-        private string secretIngredient;
-        private const int loyalCustomerOrderAmount = 60;
-        public int Temperature;
-        private string ingredientSupplier;
+    //    }
+    //    EnemyAgent kgbAgent = new EnemyAgent();
+    //}
+    //public class SuperChef
+    //{
+    //    public string cookieRecipe;
+    //    //private string secretIngredient;
+    //    private const int loyalCustomerOrderAmount = 60;
+    //    public int Temperature;
+    //    //private string ingredientSupplier;
 
-        public string GetRecipe(int orderAmount)
-        {
-            if (orderAmount >= loyalCustomerOrderAmount)
-            {
-                return cookieRecipe + " " + secretIngredient;
-            }
-            else
-            {
-                return cookieRecipe;
-            }
-        }
-    }
+    //    public string GetRecipe(int orderAmount)
+    //    {
+    //        if (orderAmount >= loyalCustomerOrderAmount)
+    //        {
+    //            return cookieRecipe + " " + secretIngredient;
+    //        }
+    //        else
+    //        {
+    //            return cookieRecipe;
+    //        }
+    //    }
+    //}
     //1. string ovenTemp = mySuperChef.Temperature;
     //2. string supplier = mySuperChef.ingredientSupplier;
     //3. int loyalCustomerOrderAmount = 54;
