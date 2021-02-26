@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace zarzadzanie_ulem
 {
-    public class Worker
+    public class Worker : Bee
     {
-        public Worker(string[] jobsICanDo)
+        public Worker(string[] jobsICanDo, double weightMg)
+            : base(weightMg)
         {
             this.jobsICanDo = jobsICanDo;
+        }
+        const double honeyUnitsPerShiftWorked = .65;
+        public override double HoneyConsumptionRate()
+        {
+            double consumption = base.HoneyConsumptionRate();
+            consumption += shiftsWorked * honeyUnitsPerShiftWorked;
+            return consumption;
+
         }
         public int ShiftsLeft
         {
