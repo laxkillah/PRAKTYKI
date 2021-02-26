@@ -54,11 +54,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "planowanie przyjec2", "plan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dziedziczenie", "dziedziczenie\dziedziczenie.csproj", "{C4624795-2DC8-459B-AF74-D71BBEEE3CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "virtual i override", "virtual i override\virtual i override.csproj", "{5673365E-018E-4F2B-8DFC-576043C90732}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "virtual i override", "virtual i override\virtual i override.csproj", "{5673365E-018E-4F2B-8DFC-576043C90732}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "klasa bazowa", "klasa bazowa\klasa bazowa.csproj", "{21E1751D-2EAC-41F4-97B6-B9D641DEB179}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zarzadzanie ulem", "zarzadzanie ulem\zarzadzanie ulem.csproj", "{7D538DD4-9ABF-424A-BA33-391E13ED6C77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfejsy", "Interfejsy\Interfejsy.csproj", "{B827E100-6B79-4C63-A041-7CF0D2CD9E31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -170,6 +172,10 @@ Global
 		{7D538DD4-9ABF-424A-BA33-391E13ED6C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D538DD4-9ABF-424A-BA33-391E13ED6C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D538DD4-9ABF-424A-BA33-391E13ED6C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B827E100-6B79-4C63-A041-7CF0D2CD9E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B827E100-6B79-4C63-A041-7CF0D2CD9E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B827E100-6B79-4C63-A041-7CF0D2CD9E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B827E100-6B79-4C63-A041-7CF0D2CD9E31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
