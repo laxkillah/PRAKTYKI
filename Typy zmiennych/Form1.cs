@@ -17,16 +17,19 @@ namespace Typy_zmiennych
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            decimal myDecimalValue = 10;
-            int myIntValue = (int) myDecimalValue;
+            {
+                decimal myDecimalValue = 10;
+                int myIntValue = (int)myDecimalValue;
 
-            MessageBox.Show("myIntValue jest równe " + myIntValue);
+                MessageBox.Show("myIntValue jest równe " + myIntValue);
+            }
         }
 
         // RZUTOWANIE TYPÓW NA INNE - WYKAZ BŁĘDÓW
-        private void Button2_Click(object sender, EventArgs e)
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
             //int myInt = 10;
             //byte myByte = (byte)myInt;
@@ -44,8 +47,6 @@ namespace Typy_zmiennych
             //long myLong = (long)myInt;
             //decimal myDecimal = (decimal)myLong;
             //myString = myString + myInt + myByte + myDouble + myChar;
-
-
         }
         public int MyMethod(bool yesNo)
         {

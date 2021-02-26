@@ -24,8 +24,7 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
-
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private void button1_Click_1(object sender, RoutedEventArgs e)
         {
             String name = "Quentin";
             int x = 3;
@@ -34,36 +33,32 @@ namespace WpfApp2
             myLabel.Text = "nazwa to " + name
                 + "\nx jest równe " + x
                 + "\nd jest równe " + d;
-
         }
 
-        private void Button2_Click(object sender, RoutedEventArgs e)
+        private void button2_Click_1(object sender, RoutedEventArgs e)
         {
             int x = 10;
             if (x == 10)
-            { 
-                myLabel.Text = "x musi być równe 150"; 
+            {
+                myLabel.Text = "x musi być równe 150";
             }
             else
             {
                 myLabel.Text = "x nie jest równe 10";
             }
-                
         }
 
-        private void Button3_Click(object sender, RoutedEventArgs e)
+        private void button3_Click_1(object sender, RoutedEventArgs e)
         {
             int someValue = 3;
             string name = "Janek";
-            if ((someValue == 3) && (name.Equals("Janek")))
+            if ((someValue == 3) && name.Equals("Janek"))
             {
                 myLabel.Text = "someValue jest równe 3 i name jest równe Janek";
             }
-           
-                
         }
 
-        private void Button4_Click(object sender, RoutedEventArgs e)
+        private void button4_Click_1(object sender, RoutedEventArgs e)
         {
             int count = 0;
             while (count < 10)
@@ -77,8 +72,6 @@ namespace WpfApp2
             }
 
             myLabel.Text = "Odpowiedź brzmi " + count;
-
-
         }
     }
 }

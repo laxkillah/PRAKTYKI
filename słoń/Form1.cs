@@ -23,24 +23,18 @@ namespace słoń
             lucinda = new Elephant() { Name = "Lucinda", EarSize = 33 };
             lloyd = new Elephant() { Name = "Lloyd", EarSize = 40 };
         }
-
-        private void Button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            
             lloyd.WhoAmI();
-
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
             lucinda.WhoAmI();
             lucinda.SpeakTo(lloyd, "Witaj");
-            
-            
-
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             Elephant holder;
             holder = lloyd;
@@ -49,7 +43,7 @@ namespace słoń
             MessageBox.Show("Obiekty zamienione");
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
             lloyd.TellMe("Cześć", lucinda);
             lloyd = lucinda;
@@ -57,7 +51,7 @@ namespace słoń
             lloyd.WhoAmI();
         }
 
-        private void Button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
             Elephant[] elephants = new Elephant[7];
             elephants[0] = new Elephant() { Name = "Lloyd", EarSize = 40 };
@@ -77,8 +71,6 @@ namespace słoń
                 }
             }
             MessageBox.Show(biggestEars.EarSize.ToString());
-
-
         }
     }
     
