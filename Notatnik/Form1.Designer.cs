@@ -53,9 +53,9 @@ namespace Notatnik
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.userOnline = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.createTimeStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.modifyTimeStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.textBox = new System.Windows.Forms.RichTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.undocnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +65,9 @@ namespace Notatnik
             this.pastecnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.headerBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -166,7 +169,7 @@ namespace Notatnik
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.undoToolStripMenuItem.Text = "&Cofnij";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -174,14 +177,14 @@ namespace Notatnik
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.redoToolStripMenuItem.Text = "&Ponów";
             this.redoToolStripMenuItem.Click += new System.EventHandler(this.redoToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // cutToolStripMenuItem
             // 
@@ -189,7 +192,7 @@ namespace Notatnik
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cutToolStripMenuItem.Text = "Wy&tnij";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.cutToolStripMenuItem_Click);
             // 
@@ -199,7 +202,7 @@ namespace Notatnik
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyToolStripMenuItem.Text = "&Kopiuj";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -209,19 +212,19 @@ namespace Notatnik
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pasteToolStripMenuItem.Text = "&Wklej";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(163, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // zaznaczwszystkoToolStripMenuItem
             // 
             this.zaznaczwszystkoToolStripMenuItem.Name = "zaznaczwszystkoToolStripMenuItem";
-            this.zaznaczwszystkoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.zaznaczwszystkoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zaznaczwszystkoToolStripMenuItem.Text = "&Zaznacz wszystko";
             // 
             // statusStrip1
@@ -230,9 +233,9 @@ namespace Notatnik
             this.toolStripStatusLabel1,
             this.userOnline,
             this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3,
+            this.createTimeStripStatusLabel3,
             this.toolStripStatusLabel4,
-            this.toolStripStatusLabel5});
+            this.modifyTimeStripStatusLabel5});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
@@ -257,11 +260,11 @@ namespace Notatnik
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(68, 17);
             this.toolStripStatusLabel2.Text = "Utworzono:";
             // 
-            // toolStripStatusLabel3
+            // createTimeStripStatusLabel3
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(95, 17);
-            this.toolStripStatusLabel3.Text = "2021-03-02 10:00";
+            this.createTimeStripStatusLabel3.Name = "createTimeStripStatusLabel3";
+            this.createTimeStripStatusLabel3.Size = new System.Drawing.Size(95, 17);
+            this.createTimeStripStatusLabel3.Text = "2021-03-02 10:00";
             // 
             // toolStripStatusLabel4
             // 
@@ -269,18 +272,18 @@ namespace Notatnik
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(97, 17);
             this.toolStripStatusLabel4.Text = "Zmodyfikowano:";
             // 
-            // toolStripStatusLabel5
+            // modifyTimeStripStatusLabel5
             // 
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(95, 17);
-            this.toolStripStatusLabel5.Text = "2021-03-02 10:30";
+            this.modifyTimeStripStatusLabel5.Name = "modifyTimeStripStatusLabel5";
+            this.modifyTimeStripStatusLabel5.Size = new System.Drawing.Size(95, 17);
+            this.modifyTimeStripStatusLabel5.Text = "2021-03-02 10:30";
             // 
             // textBox
             // 
             this.textBox.ContextMenuStrip = this.contextMenuStrip1;
-            this.textBox.Location = new System.Drawing.Point(12, 27);
+            this.textBox.Location = new System.Drawing.Point(12, 54);
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(776, 398);
+            this.textBox.Size = new System.Drawing.Size(633, 371);
             this.textBox.TabIndex = 5;
             this.textBox.Text = "";
             // 
@@ -334,11 +337,29 @@ namespace Notatnik
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(651, 27);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(149, 394);
+            this.listBox1.TabIndex = 6;
+            // 
+            // headerBox
+            // 
+            this.headerBox.Location = new System.Drawing.Point(12, 28);
+            this.headerBox.Name = "headerBox";
+            this.headerBox.Size = new System.Drawing.Size(633, 20);
+            this.headerBox.TabIndex = 7;
+            this.headerBox.Text = "Nagłówek";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.headerBox);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -379,9 +400,9 @@ namespace Notatnik
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem zaznaczwszystkoToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel createTimeStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.ToolStripStatusLabel modifyTimeStripStatusLabel5;
         private System.Windows.Forms.RichTextBox textBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem undocnToolStripMenuItem;
@@ -391,6 +412,9 @@ namespace Notatnik
         private System.Windows.Forms.ToolStripMenuItem pastecnToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox headerBox;
     }
 }
 

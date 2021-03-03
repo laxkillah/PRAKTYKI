@@ -73,11 +73,13 @@ namespace Notatnik
             {
                 fileName = dialog.FileName;
                 StreamReader f = new StreamReader(fileName);
+                headerBox.Text = f.ReadToEnd();
                 textBox.Text = f.ReadToEnd();
                 f.Close();
             }
-            
-            textBox.Text = Decrypt(Decrypt(textBox.Text));
+            textBox.Text = Decrypt(Decrypt(textBox.Text));;
+            headerBox.Text = Decrypt(Decrypt(headerBox.Text));
+
 
 
         }
@@ -85,19 +87,22 @@ namespace Notatnik
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox.Text = Encrypt(Encrypt(textBox.Text));
+            headerBox.Text = Encrypt(Encrypt(headerBox.Text));
             if (fileName != "")
             {
                 StreamWriter f = new StreamWriter(fileName);
-                f.Write(textBox.Text);
+                f.Write(textBox.Text, headerBox.Text);
                 f.Close();
             }
             else saveAsToolStripMenuItem_Click(sender, e);
             textBox.Text = Decrypt(Decrypt(textBox.Text));
+            headerBox.Text = Decrypt(Decrypt(headerBox.Text));
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox.Text = Encrypt(Encrypt(textBox.Text));
+            headerBox.Text = Encrypt(Encrypt(headerBox.Text));
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Plik tekstowy (*.txt)|*.txt";
             dialog.ShowDialog();
@@ -106,10 +111,12 @@ namespace Notatnik
                 
                 fileName = dialog.FileName;
                 StreamWriter f = new StreamWriter(fileName);
-                f.Write(textBox.Text);
+                f.Write(textBox.Text, headerBox);
                 f.Close();
             }
             textBox.Text = Decrypt(Decrypt(textBox.Text));
+            headerBox.Text = Decrypt(Decrypt(headerBox.Text));
+
         }
 
         #region Encrypt & Decrypt
@@ -198,8 +205,7 @@ namespace Notatnik
         {
             textBox.Paste();
         }
+
         #endregion
-
-
     }
 }
