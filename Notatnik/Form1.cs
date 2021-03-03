@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.Security.Cryptography;
+using System.Threading;
 
 namespace Notatnik
 {
@@ -18,14 +19,24 @@ namespace Notatnik
     {
 
         string fileName = "";
+
         
         
         public Form1()
         {
             InitializeComponent();
             
+
+
         }
-        
+        private static void RunMethodInSeparateThread(Action action)
+        {
+            var thread = new Thread(new ThreadStart(action));
+            thread.Start();
+
+            
+        }
+
 
         private DialogResult youWantSave()
         {
@@ -36,7 +47,7 @@ namespace Notatnik
             return odp;
         }
         
-        private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e) 
+        private void Form1_Closing(object sender, CancelEventArgs e) 
         {
             if (textBox.Text != "") { DialogResult odp = youWantSave();
                 if (odp == DialogResult.Cancel) e.Cancel = true; } 
@@ -72,13 +83,11 @@ namespace Notatnik
             if (dialog.FileName != "")
             {
                 fileName = dialog.FileName;
-                StreamReader f = new StreamReader(fileName);
-                headerBox.Text = f.ReadToEnd();
+                StreamReader f = new StreamReader(fileName);;
                 textBox.Text = f.ReadToEnd();
                 f.Close();
             }
-            textBox.Text = Decrypt(Decrypt(textBox.Text));;
-            headerBox.Text = Decrypt(Decrypt(headerBox.Text));
+            textBox.Text = Decrypt(Decrypt(textBox.Text));;;
 
 
 
@@ -87,22 +96,20 @@ namespace Notatnik
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox.Text = Encrypt(Encrypt(textBox.Text));
-            headerBox.Text = Encrypt(Encrypt(headerBox.Text));
             if (fileName != "")
             {
                 StreamWriter f = new StreamWriter(fileName);
-                f.Write(textBox.Text, headerBox.Text);
+                f.Write(textBox.Text);
                 f.Close();
             }
             else saveAsToolStripMenuItem_Click(sender, e);
             textBox.Text = Decrypt(Decrypt(textBox.Text));
-            headerBox.Text = Decrypt(Decrypt(headerBox.Text));
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             textBox.Text = Encrypt(Encrypt(textBox.Text));
-            headerBox.Text = Encrypt(Encrypt(headerBox.Text));
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Plik tekstowy (*.txt)|*.txt";
             dialog.ShowDialog();
@@ -111,19 +118,19 @@ namespace Notatnik
                 
                 fileName = dialog.FileName;
                 StreamWriter f = new StreamWriter(fileName);
-                f.Write(textBox.Text, headerBox);
+                f.Write(textBox.Text);
                 f.Close();
             }
             textBox.Text = Decrypt(Decrypt(textBox.Text));
-            headerBox.Text = Decrypt(Decrypt(headerBox.Text));
-
         }
+       
 
         #region Encrypt & Decrypt
         string Encrypt (string decrypted)
         {
             string hash = "test12345";
             byte[] data = UTF8Encoding.UTF8.GetBytes(decrypted);
+            
 
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
             TripleDESCryptoServiceProvider tripDES = new TripleDESCryptoServiceProvider();
@@ -135,6 +142,7 @@ namespace Notatnik
             byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
 
             return Convert.ToBase64String(result);
+            
         }
         string Decrypt (string encrypted)
         {
@@ -152,6 +160,7 @@ namespace Notatnik
 
             return UTF8Encoding.UTF8.GetString(result);
         }
+        
         #endregion
 
         #region MenuItem

@@ -283,8 +283,10 @@ namespace Notatnik
             this.textBox.ContextMenuStrip = this.contextMenuStrip1;
             this.textBox.Location = new System.Drawing.Point(12, 54);
             this.textBox.Name = "textBox";
+            this.textBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.textBox.Size = new System.Drawing.Size(633, 371);
             this.textBox.TabIndex = 5;
+            this.textBox.Tag = "";
             this.textBox.Text = "";
             // 
             // contextMenuStrip1
