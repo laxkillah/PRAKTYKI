@@ -20,21 +20,14 @@ namespace Notatnik
 
         string fileName = "";
 
-        
-        
+
+
         public Form1()
         {
             InitializeComponent();
-            
 
 
-        }
-        private static void RunMethodInSeparateThread(Action action)
-        {
-            var thread = new Thread(new ThreadStart(action));
-            thread.Start();
 
-            
         }
 
 
@@ -108,7 +101,7 @@ namespace Notatnik
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             textBox.Text = Encrypt(Encrypt(textBox.Text));
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Plik tekstowy (*.txt)|*.txt";
@@ -121,16 +114,17 @@ namespace Notatnik
                 f.Write(textBox.Text);
                 f.Close();
             }
-            textBox.Text = Decrypt(Decrypt(textBox.Text));
+            textBox.Text = Encrypt(Encrypt(textBox.Text));
         }
-       
+
 
         #region Encrypt & Decrypt
-        string Encrypt (string decrypted)
+
+        string Encrypt(string decrypted)
         {
             string hash = "test12345";
             byte[] data = UTF8Encoding.UTF8.GetBytes(decrypted);
-            
+
 
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
             TripleDESCryptoServiceProvider tripDES = new TripleDESCryptoServiceProvider();
@@ -142,9 +136,9 @@ namespace Notatnik
             byte[] result = transform.TransformFinalBlock(data, 0, data.Length);
 
             return Convert.ToBase64String(result);
-            
+
         }
-        string Decrypt (string encrypted)
+        string Decrypt(string encrypted)
         {
             string hash = "test12345";
             byte[] data = Convert.FromBase64String(encrypted);
@@ -160,6 +154,9 @@ namespace Notatnik
 
             return UTF8Encoding.UTF8.GetString(result);
         }
+
+    
+
         
         #endregion
 
