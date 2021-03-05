@@ -14,17 +14,40 @@ using System.Threading;
 
 namespace Notatnik
 {
-    
+
     public partial class Form1 : Form
     {
         string fileName = "";
+        
 
         public Form1()
         {
             InitializeComponent();
-            
-        }
 
+            string original = textBox.Text;
+            string plainText = textBox.Text;
+           
+
+            // Create a new instance of the Aes
+            // class.  This generates a new key and initialization
+            // vector (IV).
+            using (Aes myAes = Aes.Create())
+            {
+
+                // Encrypt the string to an array of bytes.
+                byte[] encrypted = EncryptStringToBytes_Aes(original, myAes.Key, myAes.IV);
+
+                // Decrypt the bytes to a string.
+                string roundtrip = DecryptStringFromBytes_Aes(encrypted, myAes.Key, myAes.IV);
+
+                //Display the original data and the decrypted data.
+                Console.WriteLine("Original:   {0}", original);
+                Console.WriteLine("Round Trip: {0}", roundtrip);
+            }
+
+
+        }
+        
 
         private DialogResult youWantSave()
         {
@@ -34,12 +57,12 @@ namespace Notatnik
                 saveToolStripMenuItem_Click(null, null);
             return odp;
         }
-        
-        private void Form1_Closing(object sender, CancelEventArgs e) 
+
+        private void Form1_Closing(object sender, CancelEventArgs e)
         {
             if (textBox.Text != "") { DialogResult odp = youWantSave();
-                if (odp == DialogResult.Cancel) e.Cancel = true; } 
-        
+                if (odp == DialogResult.Cancel) e.Cancel = true; }
+
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,16 +94,16 @@ namespace Notatnik
             if (dialog.FileName != "")
             {
                 fileName = dialog.FileName;
-                StreamReader f = new StreamReader(fileName);;
+                StreamReader f = new StreamReader(fileName); ;
                 textBox.Text = f.ReadToEnd();
                 f.Close();
             }
-            textBox.Text = Encrypt.DecryptString(textBox.Text, "test");
+            
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textBox.Text = Encrypt.EncryptString(textBox.Text, "test");
+            
             if (fileName != "")
             {
                 StreamWriter f = new StreamWriter(fileName);
@@ -88,25 +111,24 @@ namespace Notatnik
                 f.Close();
             }
             else saveAsToolStripMenuItem_Click(sender, e);
-            textBox.Text = Encrypt.DecryptString(textBox.Text, "test");
+            
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RunEncryptInSeparateThread(Encrypt.EncryptString(textBox.Text);
-            textBox.Text = Encrypt.EncryptString(textBox.Text, "test");
+             
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Plik tekstowy (*.txt)|*.txt";
             dialog.ShowDialog();
             if (dialog.FileName != "")
             {
-                
+
                 fileName = dialog.FileName;
                 StreamWriter streamWriter = new StreamWriter(fileName);
                 streamWriter.Write(textBox.Text);
                 streamWriter.Close();
             }
-            textBox.Text = Encrypt.DecryptString(textBox.Text, "test");
+            
         }
         private static void RunEncryptInSeparateThread(Action action)
         {
@@ -115,52 +137,87 @@ namespace Notatnik
         }
 
         #region Encrypt & Decrypt
-        public static class Encrypt
+        static byte[] EncryptStringToBytes_Aes(string plainText, byte[] Key, byte[] IV)
         {
-            // This size of the IV (in bytes) must = (keysize / 8).  Default keysize is 256, so the IV must be
-            // 32 bytes long.  Using a 16 character string here gives us 32 bytes when converted to a byte array.
-            private const string initVector = "test";
-            // This constant is used to determine the keysize of the encryption algorithm
-            private const int keysize = 256;
-            //Encrypt
-            
-            public static string EncryptString(string plainText, string passPhrase)
+            // Check arguments.
+            if (plainText == null || plainText.Length <= 0)
+                throw new ArgumentNullException("plainText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("IV");
+            byte[] encrypted;
+
+            // Create an Aes object
+            // with the specified key and IV.
+            using (Aes aesAlg = Aes.Create())
             {
-                
-                byte[] initVectorBytes = Encoding.UTF8.GetBytes(initVector);
-                byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
-                PasswordDeriveBytes password = new PasswordDeriveBytes(passPhrase, null);
-                byte[] keyBytes = password.GetBytes(keysize / 8);
-                RijndaelManaged symmetricKey = new RijndaelManaged();
-                symmetricKey.Mode = CipherMode.CBC;
-                ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes, initVectorBytes);
-                MemoryStream memoryStream = new MemoryStream();
-                CryptoStream cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
-                cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
-                cryptoStream.FlushFinalBlock();
-                byte[] cipherTextBytes = memoryStream.ToArray();
-                memoryStream.Close();
-                cryptoStream.Close();
-                return Convert.ToBase64String(cipherTextBytes);
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                // Create an encryptor to perform the stream transform.
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+
+                // Create the streams used for encryption.
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            //Write all data to the stream.
+                            swEncrypt.Write(plainText);
+                        }
+                        encrypted = msEncrypt.ToArray();
+                    }
+                }
             }
-            
-            public static string DecryptString(string cipherText, string passPhrase)
+
+            // Return the encrypted bytes from the memory stream.
+            return encrypted;
+        }
+
+        static string DecryptStringFromBytes_Aes(byte[] cipherText, byte[] Key, byte[] IV)
+        {
+            // Check arguments.
+            if (cipherText == null || cipherText.Length <= 0)
+                throw new ArgumentNullException("cipherText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("IV");
+
+            // Declare the string used to hold
+            // the decrypted text.
+            string plaintext = null;
+
+            // Create an Aes object
+            // with the specified key and IV.
+            using (Aes aesAlg = Aes.Create())
             {
-                byte[] initVectorBytes = Encoding.UTF8.GetBytes(initVector);
-                byte[] cipherTextBytes = Convert.FromBase64String(cipherText);
-                PasswordDeriveBytes password = new PasswordDeriveBytes(passPhrase, null);
-                byte[] keyBytes = password.GetBytes(keysize / 8);
-                RijndaelManaged symmetricKey = new RijndaelManaged();
-                symmetricKey.Mode = CipherMode.CBC;
-                ICryptoTransform decryptor = symmetricKey.CreateDecryptor(keyBytes, initVectorBytes);
-                MemoryStream memoryStream = new MemoryStream(cipherTextBytes);
-                CryptoStream cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-                byte[] plainTextBytes = new byte[cipherTextBytes.Length];
-                int decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
-                memoryStream.Close();
-                cryptoStream.Close();
-                return Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount);
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                // Create a decryptor to perform the stream transform.
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+                // Create the streams used for decryption.
+                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+
+                            // Read the decrypted bytes from the decrypting stream
+                            // and place them in a string.
+                            plaintext = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
             }
+
+            return plaintext;
         }
 
         #endregion
@@ -217,5 +274,42 @@ namespace Notatnik
         }
         #endregion
 
+
+        private void ecnryptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string original = textBox.Text;
+            
+
+            // Create a new instance of the Aes
+            // class.  This generates a new key and initialization
+            // vector (IV).
+            using (Aes myAes = Aes.Create())
+            {
+
+                
+                // Encrypt the string to an array of bytes.
+                byte[] encrypted = EncryptStringToBytes_Aes(original, myAes.Key, myAes.IV);
+            }
+        }
+        private void decryptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string text = textBox.Text;
+            byte[] encrypted = text;
+
+            // Create a new instance of the Aes
+            // class.  This generates a new key and initialization
+            // vector (IV).
+            using (Aes myAes = Aes.Create())
+            {
+
+
+
+                
+                // Decrypt the bytes to a string.
+                string roundtrip = DecryptStringFromBytes_Aes(encrypted, myAes.Key, myAes.IV);
+
+
+            }
+        }
     }
 }
