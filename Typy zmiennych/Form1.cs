@@ -46,7 +46,7 @@ namespace Typy_zmiennych
             //myString = (string)myChar;
             //long myLong = (long)myInt;
             //decimal myDecimal = (decimal)myLong;
-            //myString = myString + myInt + myByte + myDouble + myChar;
+            //myString = myString + myInt + myByte + myDouble + myChar;//
         }
         public int MyMethod(bool yesNo)
         {

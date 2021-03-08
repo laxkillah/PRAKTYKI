@@ -40,7 +40,7 @@ namespace zarzadzanie_ulem
         private void nextShift_Click(object sender, EventArgs e)
         {
             report.Text = queen.WorkTheNextShift();
-        }
+        }//
     }
 
 }

@@ -8,7 +8,7 @@ namespace kalkulator
 {
     static class Program
     {
-        /// <summary>
+        /// <summary>//
         /// Główny punkt wejścia dla aplikacji.
         /// </summary>
         [STAThread]

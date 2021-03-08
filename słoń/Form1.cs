@@ -71,7 +71,7 @@ namespace słoń
                 }
             }
             MessageBox.Show(biggestEars.EarSize.ToString());
-        }
+        }//
     }
     
 }

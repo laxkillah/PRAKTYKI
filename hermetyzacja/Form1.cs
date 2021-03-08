@@ -20,7 +20,7 @@ namespace hermetyzacja
 
 
     }
-    //public class SecretAgent
+    //public class SecretAgent //
     //{
     //    //private string realName;
     //    //private string alias;

@@ -16,7 +16,7 @@ namespace klasa_bazowa
         {
             InitializeComponent();
         }
-    }
+    }//
     //public class Vertebrate
     //{
     //    public virtual void Eat(Food morsel)

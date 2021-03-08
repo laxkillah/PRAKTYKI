@@ -171,6 +171,6 @@ namespace zabawa_w_chowanego
             goHere.Visible = true;
             exits.Visible = true;
             MoveToANewLocation(livingRoom);
-        }
+        }//
     }
 }
