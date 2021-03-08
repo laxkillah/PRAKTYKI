@@ -65,9 +65,11 @@ namespace Notatnik
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.szyfrowanieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ecnryptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.decryptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.encryptButton = new System.Windows.Forms.Button();
+            this.decryptButton = new System.Windows.Forms.Button();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -77,8 +79,7 @@ namespace Notatnik
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.plikToolStripMenuItem,
-            this.edytujToolStripMenuItem,
-            this.szyfrowanieToolStripMenuItem});
+            this.edytujToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -270,10 +271,10 @@ namespace Notatnik
             // textBox
             // 
             this.textBox.ContextMenuStrip = this.contextMenuStrip1;
-            this.textBox.Location = new System.Drawing.Point(12, 27);
+            this.textBox.Location = new System.Drawing.Point(12, 53);
             this.textBox.Name = "textBox";
             this.textBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.textBox.Size = new System.Drawing.Size(633, 398);
+            this.textBox.Size = new System.Drawing.Size(633, 372);
             this.textBox.TabIndex = 5;
             this.textBox.Tag = "";
             this.textBox.Text = "";
@@ -336,34 +337,60 @@ namespace Notatnik
             this.listBox1.Size = new System.Drawing.Size(149, 368);
             this.listBox1.TabIndex = 6;
             // 
-            // szyfrowanieToolStripMenuItem
+            // encryptButton
             // 
-            this.szyfrowanieToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ecnryptToolStripMenuItem,
-            this.decryptToolStripMenuItem});
-            this.szyfrowanieToolStripMenuItem.Name = "szyfrowanieToolStripMenuItem";
-            this.szyfrowanieToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.szyfrowanieToolStripMenuItem.Text = "Szyfrowanie";
+            this.encryptButton.Location = new System.Drawing.Point(422, 28);
+            this.encryptButton.Name = "encryptButton";
+            this.encryptButton.Size = new System.Drawing.Size(101, 23);
+            this.encryptButton.TabIndex = 7;
+            this.encryptButton.Text = "Szyfruj";
+            this.encryptButton.UseVisualStyleBackColor = true;
+            this.encryptButton.Click += new System.EventHandler(this.encryptButton_Click);
             // 
-            // ecnryptToolStripMenuItem
+            // decryptButton
             // 
-            this.ecnryptToolStripMenuItem.Name = "ecnryptToolStripMenuItem";
-            this.ecnryptToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ecnryptToolStripMenuItem.Text = "Szyfruj";
-            this.ecnryptToolStripMenuItem.Click += new System.EventHandler(this.ecnryptToolStripMenuItem_Click);
+            this.decryptButton.Location = new System.Drawing.Point(529, 27);
+            this.decryptButton.Name = "decryptButton";
+            this.decryptButton.Size = new System.Drawing.Size(98, 23);
+            this.decryptButton.TabIndex = 8;
+            this.decryptButton.Text = "Deszyfruj";
+            this.decryptButton.UseVisualStyleBackColor = true;
+            this.decryptButton.Click += new System.EventHandler(this.decryptButton_Click);
             // 
-            // decryptToolStripMenuItem
+            // textBoxPassword
             // 
-            this.decryptToolStripMenuItem.Name = "decryptToolStripMenuItem";
-            this.decryptToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.decryptToolStripMenuItem.Text = "Deszyfruj";
-            this.decryptToolStripMenuItem.Click += new System.EventHandler(this.decryptToolStripMenuItem_Click);
+            this.textBoxPassword.Location = new System.Drawing.Point(163, 30);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(235, 20);
+            this.textBoxPassword.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(109, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Hasło:";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(661, 428);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(109, 23);
+            this.progressBar1.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.decryptButton);
+            this.Controls.Add(this.encryptButton);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.statusStrip1);
@@ -417,9 +444,11 @@ namespace Notatnik
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ToolStripMenuItem szyfrowanieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ecnryptToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem decryptToolStripMenuItem;
+        private System.Windows.Forms.Button encryptButton;
+        private System.Windows.Forms.Button decryptButton;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
