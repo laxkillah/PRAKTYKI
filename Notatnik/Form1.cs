@@ -12,22 +12,19 @@ using System.Drawing.Printing;
 using System.Security.Cryptography;
 using System.Threading;
 
+
 namespace Notatnik
 {
     
 
-    public partial class Form1 : Form
+    public partial class Form1 : Files
     {
+        
         string fileName = "";
-        public byte[] IV = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
-        public int BlockSize = 128;
-        
-
-        
-        
         public Form1()
         {
             InitializeComponent();
+            
         }
         private DialogResult youWantSave()
         {
@@ -55,6 +52,10 @@ namespace Notatnik
                 fileName = "";
                 textBox.Clear();
             }
+            newFile();
+            listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
+            
+
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,23 +68,20 @@ namespace Notatnik
                 fileName = "";
                 textBox.Clear();
             }
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Wszystkie pliki| *";
-            dialog.Multiselect = false;
-            dialog.ShowDialog();
-            if (dialog.FileName != "")
-            {
-                fileName = dialog.FileName;
-                StreamReader f = new StreamReader(fileName); ;
-                textBox.Text = f.ReadToEnd();
-                f.Close();
-            }
-
+            openFile();
+            listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
+            
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            saveFileWithPassword();
+            listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
+            
+        }
 
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             if (fileName != "")
             {
                 StreamWriter f = new StreamWriter(fileName);
@@ -91,24 +89,7 @@ namespace Notatnik
                 f.Close();
             }
             else saveAsToolStripMenuItem_Click(sender, e);
-
-        }
-
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Plik tekstowy (*.txt)|*.txt";
-            dialog.ShowDialog();
-            if (dialog.FileName != "")
-            {
-
-                fileName = dialog.FileName;
-                StreamWriter streamWriter = new StreamWriter(fileName);
-                streamWriter.Write(textBox.Text);
-                streamWriter.Close();
-            }
-
+            listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
         }
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {

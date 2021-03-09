@@ -61,10 +61,8 @@ namespace Notatnik
             this.cutcnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copycnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pastecnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -320,25 +318,20 @@ namespace Notatnik
             this.pastecnToolStripMenuItem.Text = "Wklej";
             this.pastecnToolStripMenuItem.Click += new System.EventHandler(this.pastecnToolStripMenuItem_Click);
             // 
-            // openFileDialog1
+            // listBox
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            //
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(651, 53);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(149, 368);
-            this.listBox1.TabIndex = 6;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.Location = new System.Drawing.Point(651, 53);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(149, 368);
+            this.listBox.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBox);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -387,10 +380,8 @@ namespace Notatnik
         private System.Windows.Forms.ToolStripMenuItem cutcnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copycnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pastecnToolStripMenuItem;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox;
     }
 }
 
