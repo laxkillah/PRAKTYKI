@@ -11,13 +11,18 @@ using System.Windows.Forms;
 
 namespace Notatnik
 {
-    public partial class Welcome : Files
+    public partial class Welcome : Form
     {
-        TextBox textBox = new TextBox();
-        string fileName = "";
+        Files files;
+        
         public Welcome()
         {
             InitializeComponent();
+            files = new Files();
+            files.newFile();
+            this.Text = files.FileName;
+            files.OpenFile(files.FileLocation);
+            
         }
 
         private void newListPasswordButton_Click(object sender, EventArgs e)
@@ -27,37 +32,28 @@ namespace Notatnik
                 MessageBox.Show("Wprowadź hasło!", "Błędne hasło");
                 return; 
             }
-            newFileWithPassword();
+            
         }
 
         private void newListButton_Click(object sender, EventArgs e)
         {
-            newFile();
-            //Form1 f1 = new Form1();
-            //this.Hide();
-            //f1.ShowDialog();
-            //this.Close();
+            
+            Form1 f1 = new Form1();
+            this.Hide();
+            f1.ShowDialog();
+            this.Close();
+            files.newFile();
         }
 
         private void openListButton_Click(object sender, EventArgs e)
         {
             
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Wszystkie pliki| *";
-            dialog.Multiselect = false;
-            dialog.ShowDialog();
-            if (dialog.FileName != "")
-            {
-                fileName = dialog.FileName;
-                StreamReader f = new StreamReader(fileName);
-                textBox.Text = f.ReadToEnd();
-                f.ReadToEnd();
-            }
-            Form1 f1 = new Form1();
-            this.Hide();
-            f1.ShowDialog();
-            this.Close();
+                Form1 f1 = new Form1();
+                this.Hide();
+                f1.ShowDialog();
+                this.Close();
             
+
 
         }
     }

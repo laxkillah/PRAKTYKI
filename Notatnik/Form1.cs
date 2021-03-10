@@ -17,14 +17,20 @@ namespace Notatnik
 {
     
 
-    public partial class Form1 : Files
+    public partial class Form1 : Form
     {
-        
+        Files files;
         string fileName = "";
         public Form1()
         {
             InitializeComponent();
+            files = new Files();
+            files.newFile();
+            this.Text = files.FileName;
             
+
+
+
         }
         private DialogResult youWantSave()
         {
@@ -44,38 +50,78 @@ namespace Notatnik
         #region MenuItem
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (textBox.Text != "")
+            if (files.IsFileSaved)
             {
-                DialogResult odp = youWantSave();
-                if (odp == DialogResult.Cancel)
-                    return;
-                fileName = "";
-                textBox.Clear();
+                files.newFile();
+                textBox.Text = "";
+                UpdateView();
             }
-            newFile();
-            listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
+            else
+            {
+                DialogResult result = MessageBox.Show("Czy chcesz zapisać zmiany w " + files.FileName, "Notatnik",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    if(files.FileName.Contains("Bez tytułu"))
+                    {
+                        SaveFileDialog newFileSave = new SaveFileDialog();
+                        newFileSave.Filter = "Plik tekstowy|*txt";
+                        if (newFileSave.ShowDialog()==DialogResult.OK)
+                        {
+                            files.SaveFile(newFileSave.FileName, textBox.Lines);
+                            UpdateView();
+                        }
+                        else
+                        {
+                            files.SaveFile(files.FileName, textBox.Lines);
+                            UpdateView();
+                        }
+                    }
+                }
+                else if(result == DialogResult.No)
+                {
+                    textBox.Text = "";
+                    files.newFile();
+                    UpdateView();
+                }
+
+            }
+            //if (textBox.Text != "")
+            //{
+            //    DialogResult odp = youWantSave();
+            //    if (odp == DialogResult.Cancel)
+            //        return;
+            //    fileName = "";
+            //    textBox.Clear();
+            //}
+            //listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
             
 
+        }
+
+        private void UpdateView()
+        {
+            this.Text = !files.IsFileSaved ? files.FileName + "*" : files.FileName;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (textBox.Text != "")
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Title = "Otwórz plik";
+            if(openFile.ShowDialog() == DialogResult.OK)
             {
-                DialogResult odp = youWantSave();
-                if (odp == DialogResult.Cancel)
-                    return;
-                fileName = "";
-                textBox.Clear();
+                textBox.TextChanged -= textBox_TextChanged;
+                textBox.Text = files.OpenFile(openFile.FileName);
+                textBox.TextChanged += textBox_TextChanged;
+                UpdateView();
             }
-            openFile();
-            listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
-            
+            listBox.Items.Add(files.FileName.Substring(files.FileName.LastIndexOf(@"\") + 1));
+
+
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileWithPassword();
+            
             listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
             
         }
@@ -142,8 +188,13 @@ namespace Notatnik
             textBox.Paste();
         }
 
+
         #endregion
 
-        
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+            files.IsFileSaved = false;
+            UpdateView();
+        }
     }
 }

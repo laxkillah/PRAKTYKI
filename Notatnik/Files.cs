@@ -8,39 +8,58 @@ using System.Windows.Forms;
 
 namespace Notatnik
 {
-    public class Files : Form
+    public class Files
     {
-        string fileName = "";
-        private TextBox textBox = new TextBox();
+        private string fileName;
+        private bool isFileSaved;
+        private  string fileLocation;
+
+        public string FileName { get => fileName; set => fileName = value; }
+        public bool IsFileSaved { get => isFileSaved; set => isFileSaved = value; }
+        public string FileLocation { get => fileLocation; set => fileLocation = value; }
+
         public void newFile()
         {
-            Form1 f1 = new Form1();
-            this.Hide();
-            f1.ShowDialog();
-            this.Close();
+            this.FileName = "Bez tytułu.txt";
+            this.IsFileSaved = true;
             
 
         }
-        public void openFile()
+        public string OpenFile(string fileLocation)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Wszystkie pliki| *";
-            dialog.Multiselect = false;
-            dialog.ShowDialog();
-            if (dialog.FileName != "")
+            //OpenFileDialog dialog = new OpenFileDialog();
+            //dialog.Filter = "Wszystkie pliki| *";
+            //dialog.Multiselect = false;
+            //dialog.ShowDialog();
+            //if (dialog.FileName != "")
+            //{
+            //    fileName = dialog.FileName;
+            //    StreamReader f = new StreamReader(fileName);
+            //    f.Close();
+            //}
+            string content;
+            this.FileLocation = fileLocation;
+            Stream stream = File.Open(fileLocation, FileMode.Open, FileAccess.ReadWrite);
+            using(StreamReader streamReader=new StreamReader(stream))
             {
-                fileName = dialog.FileName;
-                StreamReader f = new StreamReader(fileName);
-                f.Close();
+                content = streamReader.ReadToEnd();
+
             }
+            string filename = FileLocation.Substring(FileLocation.LastIndexOf("\\") + 1);
+            this.FileName = filename;
+            this.IsFileSaved = true;
+            return content;
+            
+
+        }
+        public void SaveFile(string fileName, string[] lines)
+        {
+
         }
         public void newFileWithPassword()
         {
             
-            Form1 f1 = new Form1();
-            this.Hide();
-            f1.ShowDialog();
-            this.Close();
+            
         }
         
         public void saveFileWithPassword()
@@ -48,14 +67,14 @@ namespace Notatnik
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Plik tekstowy (*.txt)|*.txt";
             dialog.ShowDialog();
-            if (dialog.FileName != "")
-            {
+            //if (dialog.FileName != "")
+            //{
 
-                fileName = dialog.FileName;
-                StreamWriter streamWriter = new StreamWriter(fileName);
-                streamWriter.Write(textBox.Text);
-                streamWriter.Close();
-            }
+            //    fileName = dialog.FileName;
+            //    StreamWriter streamWriter = new StreamWriter(fileName);
+            //    streamWriter.Write(this.textBox.Text);
+            //    streamWriter.Close();
+            //}
             
 
         }

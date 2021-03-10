@@ -271,6 +271,7 @@ namespace Notatnik
             this.textBox.TabIndex = 5;
             this.textBox.Tag = "";
             this.textBox.Text = "";
+            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             // 
             // contextMenuStrip1
             // 

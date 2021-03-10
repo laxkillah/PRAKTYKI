@@ -9,15 +9,15 @@ using System.Windows.Forms;
 
 namespace Notatnik
 {
-    class Crypto : Files
+    class Crypto 
     {
-        private TextBox textBox;
-        private TextBox passwordBox;
+        public TextBox textBox;
+        public TextBox passwordBox;
         public byte[] IV = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
         public int BlockSize = 128;
 
         private void Encrypt()
-        {
+        { 
             byte[] bytes = Encoding.Unicode.GetBytes(textBox.Text);
             //Encrypt
             SymmetricAlgorithm crypt = Aes.Create();
