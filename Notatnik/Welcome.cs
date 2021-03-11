@@ -21,7 +21,7 @@ namespace Notatnik
             files = new Files();
             files.newFile();
             this.Text = files.FileName;
-            files.OpenFile(files.FileLocation);
+            
             
         }
 
