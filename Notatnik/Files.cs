@@ -27,34 +27,40 @@ namespace Notatnik
         }
         public string OpenFile(string fileLocation)
         {
-            //OpenFileDialog dialog = new OpenFileDialog();
-            //dialog.Filter = "Wszystkie pliki| *";
-            //dialog.Multiselect = false;
-            //dialog.ShowDialog();
-            //if (dialog.FileName != "")
-            //{
-            //    fileName = dialog.FileName;
-            //    StreamReader f = new StreamReader(fileName);
-            //    f.Close();
-            //}
+
             string content;
             this.FileLocation = fileLocation;
             Stream stream = File.Open(fileLocation, FileMode.Open, FileAccess.ReadWrite);
-            using(StreamReader streamReader=new StreamReader(stream))
+            using (StreamReader streamReader = new StreamReader(stream))
             {
                 content = streamReader.ReadToEnd();
 
             }
+            UpdateFileStatus();
+            return content;
+
+
+        }
+
+        private void UpdateFileStatus()
+        {
             string filename = FileLocation.Substring(FileLocation.LastIndexOf("\\") + 1);
             this.FileName = filename;
             this.IsFileSaved = true;
-            return content;
-            
-
         }
-        public void SaveFile(string fileName, string[] lines)
-        {
 
+        public void SaveFile(string fileLocation, string[] lines)
+        {
+            this.FileLocation = fileLocation;
+            Stream stream = File.Open(FileLocation, FileMode.OpenOrCreate, FileAccess.Write);
+            using (StreamWriter streamWriter = new StreamWriter(stream))
+            {
+                foreach(string line in lines)
+                {
+                    streamWriter.WriteLine(line);
+                }
+            }
+            UpdateFileStatus();
         }
         public void newFileWithPassword()
         {
@@ -67,16 +73,7 @@ namespace Notatnik
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "Plik tekstowy (*.txt)|*.txt";
             dialog.ShowDialog();
-            //if (dialog.FileName != "")
-            //{
-
-            //    fileName = dialog.FileName;
-            //    StreamWriter streamWriter = new StreamWriter(fileName);
-            //    streamWriter.Write(this.textBox.Text);
-            //    streamWriter.Close();
-            //}
             
-
         }
     }
 }

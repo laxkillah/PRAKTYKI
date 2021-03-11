@@ -19,18 +19,18 @@ namespace Notatnik
 
     public partial class Form1 : Form
     {
+        Crypto crypto;
         Files files;
         string fileName = "";
+
         public Form1()
         {
             InitializeComponent();
             files = new Files();
             files.newFile();
-            this.Text = files.FileName;
-            
-
-
-
+            this.Text = files.FileLocation;
+            crypto = new Crypto();
+ 
         }
         private DialogResult youWantSave()
         {
@@ -52,8 +52,8 @@ namespace Notatnik
         {
             if (files.IsFileSaved)
             {
-                files.newFile();
                 textBox.Text = "";
+                files.newFile();
                 UpdateView();
             }
             else
@@ -61,7 +61,7 @@ namespace Notatnik
                 DialogResult result = MessageBox.Show("Czy chcesz zapisać zmiany w " + files.FileName, "Notatnik",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if(files.FileName.Contains("Bez tytułu"))
+                    if(files.FileName.Contains("Bez tytułu.txt"))
                     {
                         SaveFileDialog newFileSave = new SaveFileDialog();
                         newFileSave.Filter = "Plik tekstowy|*txt";
@@ -72,7 +72,7 @@ namespace Notatnik
                         }
                         else
                         {
-                            files.SaveFile(files.FileName, textBox.Lines);
+                            files.SaveFile(files.FileLocation, textBox.Lines);
                             UpdateView();
                         }
                     }
@@ -85,25 +85,15 @@ namespace Notatnik
                 }
 
             }
-            //if (textBox.Text != "")
-            //{
-            //    DialogResult odp = youWantSave();
-            //    if (odp == DialogResult.Cancel)
-            //        return;
-            //    fileName = "";
-            //    textBox.Clear();
-            //}
-            //listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
             
-
         }
 
-        private void UpdateView()
+        public void UpdateView()
         {
             this.Text = !files.IsFileSaved ? files.FileName + "*" : files.FileName;
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        public void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Title = "Otwórz plik";
@@ -114,6 +104,7 @@ namespace Notatnik
                 textBox.TextChanged += textBox_TextChanged;
                 UpdateView();
             }
+            crypto.Decrypt(textBox);
             listBox.Items.Add(files.FileName.Substring(files.FileName.LastIndexOf(@"\") + 1));
 
 
@@ -121,21 +112,39 @@ namespace Notatnik
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            if(files.IsFileSaved)
+            {
+                if(!this.Text.Contains("Bez tytułu.txt"))
+                {
+                    files.SaveFile(files.FileLocation, textBox.Lines);
+                    UpdateView();
+                }
+                else
+                {
+                    SaveFile();
+                }
+            }
+            crypto.Encrypt(textBox);
             listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
             
         }
 
+        private void SaveFile()
+        {
+            SaveFileDialog fileSave = new SaveFileDialog();
+            fileSave.Filter = "Text(*.txt)|*.txt";
+            if (fileSave.ShowDialog() == DialogResult.OK)
+            {
+                files.SaveFile(fileSave.FileName, textBox.Lines);
+                UpdateView();
+            }
+            crypto.Encrypt(textBox);
+        }
+
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (fileName != "")
-            {
-                StreamWriter f = new StreamWriter(fileName);
-                f.Write(textBox.Text);
-                f.Close();
-            }
-            else saveAsToolStripMenuItem_Click(sender, e);
-            listBox.Items.Add(fileName.Substring(fileName.LastIndexOf(@"\") + 1));
+            SaveFile();
+            
         }
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
