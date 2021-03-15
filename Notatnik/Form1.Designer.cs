@@ -54,7 +54,6 @@ namespace Notatnik
             this.createTimeStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.modifyTimeStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.textBox = new System.Windows.Forms.RichTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.undocnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redocnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,10 +61,18 @@ namespace Notatnik
             this.copycnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pastecnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.listBox = new System.Windows.Forms.ListBox();
+            this.textBox = new System.Windows.Forms.RichTextBox();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -261,18 +268,6 @@ namespace Notatnik
             this.modifyTimeStripStatusLabel5.Size = new System.Drawing.Size(95, 17);
             this.modifyTimeStripStatusLabel5.Text = "2021-03-02 10:30";
             // 
-            // textBox
-            // 
-            this.textBox.ContextMenuStrip = this.contextMenuStrip1;
-            this.textBox.Location = new System.Drawing.Point(12, 53);
-            this.textBox.Name = "textBox";
-            this.textBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.textBox.Size = new System.Drawing.Size(633, 372);
-            this.textBox.TabIndex = 5;
-            this.textBox.Tag = "";
-            this.textBox.Text = "";
-            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -319,20 +314,65 @@ namespace Notatnik
             this.pastecnToolStripMenuItem.Text = "Wklej";
             this.pastecnToolStripMenuItem.Click += new System.EventHandler(this.pastecnToolStripMenuItem_Click);
             // 
-            // listBox
+            // textBox
             // 
-            this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(651, 53);
-            this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(149, 368);
-            this.listBox.TabIndex = 6;
+            this.textBox.ContextMenuStrip = this.contextMenuStrip1;
+            this.textBox.Location = new System.Drawing.Point(12, 53);
+            this.textBox.Name = "textBox";
+            this.textBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.textBox.Size = new System.Drawing.Size(504, 372);
+            this.textBox.TabIndex = 5;
+            this.textBox.Tag = "";
+            this.textBox.Text = "";
+            this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Location = new System.Drawing.Point(522, 53);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.listView1);
+            this.splitContainer1.Size = new System.Drawing.Size(266, 372);
+            this.splitContainer1.SplitterDistance = 107;
+            this.splitContainer1.TabIndex = 6;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(110, 372);
+            this.treeView1.TabIndex = 0;
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(-3, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(177, 372);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Nazwa";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -344,6 +384,10 @@ namespace Notatnik
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,7 +418,6 @@ namespace Notatnik
         private System.Windows.Forms.ToolStripStatusLabel createTimeStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel modifyTimeStripStatusLabel5;
-        private System.Windows.Forms.RichTextBox textBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem undocnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redocnToolStripMenuItem;
@@ -382,7 +425,11 @@ namespace Notatnik
         private System.Windows.Forms.ToolStripMenuItem copycnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pastecnToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.RichTextBox textBox;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
 
