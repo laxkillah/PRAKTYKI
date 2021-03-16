@@ -66,6 +66,9 @@ namespace Notatnik
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button2 = new System.Windows.Forms.Button();
+            this.passwordBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -367,11 +370,39 @@ namespace Notatnik
             // 
             this.columnHeader1.Text = "Nazwa";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(314, 27);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Deszyfruj";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // passwordBox
+            // 
+            this.passwordBox.Location = new System.Drawing.Point(298, 4);
+            this.passwordBox.Name = "passwordBox";
+            this.passwordBox.Size = new System.Drawing.Size(116, 20);
+            this.passwordBox.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(253, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Hasło:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.passwordBox);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.statusStrip1);
@@ -430,6 +461,9 @@ namespace Notatnik
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox passwordBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

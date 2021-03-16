@@ -21,7 +21,6 @@ namespace Notatnik
     {
         Crypto crypto;
         Files files;
-        string fileName = "";
         string dir = @"";
         public Form1()
         {
@@ -29,8 +28,9 @@ namespace Notatnik
             PopulateTreeView();
             files = new Files();
             files.newFile();
-            this.Text = files.FileLocation;
+            this.Text = files.FileName;
             crypto = new Crypto();
+            
 
         }
         private void PopulateTreeView()
@@ -81,9 +81,8 @@ namespace Notatnik
 
         }
         #region MenuItem
-        public void newToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             if (files.IsFileSaved)
             {
                 textBox.Text = "";
@@ -98,7 +97,7 @@ namespace Notatnik
                     if (files.FileName.Contains("Bez tytułu.txt"))
                     {
                         SaveFileDialog newFileSave = new SaveFileDialog();
-                        newFileSave.Filter = "Plik tekstowy|*txt";
+                        newFileSave.Filter = "Nazwa pliku|*";
                         if (newFileSave.ShowDialog() == DialogResult.OK)
                         {
                             files.SaveFile(newFileSave.FileName, textBox.Lines);
@@ -119,7 +118,6 @@ namespace Notatnik
                 }
 
             }
-
         }
 
         public void UpdateView()
@@ -127,26 +125,34 @@ namespace Notatnik
             this.Text = !files.IsFileSaved ? files.FileName + "*" : files.FileName;
         }
 
-        public void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Title = "Otwórz plik";
-            if(openFile.ShowDialog() == DialogResult.OK)
+            openFile.Filter = "Wszystkie pliki| *";
+            if (openFile.ShowDialog() == DialogResult.OK)
             {
                 textBox.TextChanged -= textBox_TextChanged;
                 textBox.Text = files.OpenFile(openFile.FileName);
                 textBox.TextChanged += textBox_TextChanged;
                 UpdateView();
+                textBox.Visible = false;
             }
-            //crypto.Decrypt(textBox);
-            
 
-
+        }
+        public void openWelcome()
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            textBox.TextChanged -= textBox_TextChanged;
+            textBox.Text = files.OpenFile(openFile.FileName);
+            textBox.TextChanged += textBox_TextChanged;
+            UpdateView();
+            textBox.Visible = false;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(files.IsFileSaved)
+            if(!files.IsFileSaved)
             {
                 if(!this.Text.Contains("Bez tytułu.txt"))
                 {
@@ -155,7 +161,13 @@ namespace Notatnik
                 }
                 else
                 {
-                    SaveFile();
+                    SaveFileDialog fileSave = new SaveFileDialog();
+                    fileSave.Filter = "Nazwa pliku|*";
+                    if(fileSave.ShowDialog() == DialogResult.OK)
+                    {
+                        files.SaveFile(fileSave.FileName, textBox.Lines);
+                        UpdateView();
+                    }
                 }
             }
             //textBox.Text = Encrypt(textBox, passwordBox);

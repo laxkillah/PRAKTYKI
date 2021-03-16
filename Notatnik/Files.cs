@@ -10,11 +10,15 @@ namespace Notatnik
 {
     public class Files
     {
-        Form1 form1;
-        RichTextBox textBox;
+        
         private string fileName;
         private bool isFileSaved;
         private  string fileLocation;
+        public string DateTime_Now()
+        {
+            return DateTime.Now.ToString();
+        }
+
 
 
         public string FileName { get => fileName; set => fileName = value; }
@@ -26,42 +30,6 @@ namespace Notatnik
         {
             this.FileName = "Bez tytułu.txt";
             this.IsFileSaved = true;
-
-
-            if (IsFileSaved)
-            {
-                textBox.Text = "";
-                form1.UpdateView();
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show("Czy chcesz zapisać zmiany w " + FileName, "Notatnik", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    if (FileName.Contains("Bez tytułu.txt"))
-                    {
-                        SaveFileDialog newFileSave = new SaveFileDialog();
-                        newFileSave.Filter = "Plik tekstowy|*txt";
-                        if (newFileSave.ShowDialog() == DialogResult.OK)
-                        {
-                            SaveFile(newFileSave.FileName, textBox.Lines);
-                            form1.UpdateView();
-                        }
-                        else
-                        {
-                            SaveFile(FileLocation, textBox.Lines);
-                            form1.UpdateView();
-                        }
-                    }
-                }
-                else if (result == DialogResult.No)
-                {
-                    textBox.Text = "";
-                    form1.UpdateView();
-                }
-
-            }
-
 
         }
         public string OpenFile(string fileLocation)

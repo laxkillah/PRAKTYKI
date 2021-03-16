@@ -116,6 +116,8 @@ namespace Notatnik
             this.Controls.Add(this.openListButton);
             this.Controls.Add(this.newListPasswordButton);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Welcome";
             this.Text = "Notatnik";
             this.ResumeLayout(false);

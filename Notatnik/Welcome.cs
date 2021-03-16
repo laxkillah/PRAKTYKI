@@ -13,9 +13,8 @@ namespace Notatnik
 {
     public partial class Welcome : Form
     {
-        public Form1 form1;
         Files files;
-        public RichTextBox textBox;
+
         public Welcome()
         {
             InitializeComponent();
@@ -30,6 +29,7 @@ namespace Notatnik
                 MessageBox.Show("Wprowadź hasło!", "Błędne hasło");
                 return;
             }
+            this.Hide();
             Form1 f1 = new Form1();
             f1.ShowDialog();
             files.newFile();
@@ -39,24 +39,15 @@ namespace Notatnik
 
         private void newListButton_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            Form1 f1 = new Form1();
+            f1.ShowDialog();
             files.newFile();
-
-        
-
-        //if (files.IsFileSaved)
-        //{
-        //    form1.textBox = textBox;
-        //    files.newFile();
-        //    form1.UpdateView();
-        //}
-        //form1.newToolStripMenuItem_Click(sender, e);
-
-
         } 
 
         private void openListButton_Click(object sender, EventArgs e)
         {
+
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "Wszystkie pliki| *";
             openFile.Multiselect = false;
@@ -65,8 +56,10 @@ namespace Notatnik
             {
                 files.FileName = openFile.FileName;
                 StreamReader f = new StreamReader(files.FileName);
+                f.ReadToEnd();
                 f.Close();
             }
+            this.Hide();
             Form1 f1 = new Form1();
             f1.ShowDialog();
 
