@@ -21,7 +21,8 @@ namespace Notatnik
     {
         Crypto crypto;
         Files files;
-        string dir = @"";
+        string dir = @"Nowy plik.txt";
+        String path = String.Empty;
         public Form1()
         {
             InitializeComponent();
@@ -170,7 +171,7 @@ namespace Notatnik
                     }
                 }
             }
-            //textBox.Text = Encrypt(textBox, passwordBox);
+           
             
             
         }
@@ -184,7 +185,7 @@ namespace Notatnik
                 files.SaveFile(fileSave.FileName, textBox.Lines);
                 UpdateView();
             }
-            //crypto.Encrypt(textBox);
+            
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -307,6 +308,14 @@ namespace Notatnik
             treeView1.Nodes.Clear();
             var rootDirectoryInfo = new DirectoryInfo(dir);
             treeView1.Nodes.Add(CreateDirectoryNode(rootDirectoryInfo));
+        }
+
+        private void decryptButton_Click(object sender, EventArgs e)
+        {
+            if (passwordBox.Text != "")
+            {
+                
+            }
         }
     }
 }

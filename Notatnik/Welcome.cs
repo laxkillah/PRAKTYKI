@@ -59,8 +59,11 @@ namespace Notatnik
                 f.ReadToEnd();
                 f.Close();
             }
+            
             this.Hide();
             Form1 f1 = new Form1();
+            files.OpenFile(openFile.FileName);
+            f1.openWelcome();
             f1.ShowDialog();
 
         }
