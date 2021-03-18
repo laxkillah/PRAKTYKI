@@ -34,7 +34,7 @@ namespace Notatnik
         }
         public string OpenFile(string fileLocation)
         {
-
+            
             string content;
             this.FileLocation = fileLocation;
             Stream stream = File.Open(fileLocation, FileMode.Open, FileAccess.ReadWrite);
@@ -43,10 +43,9 @@ namespace Notatnik
                 content = streamReader.ReadToEnd();
 
             }
+            
             UpdateFileStatus();
             return content;
-
-
         }
 
         private void UpdateFileStatus()

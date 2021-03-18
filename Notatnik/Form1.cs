@@ -21,7 +21,7 @@ namespace Notatnik
     {
         Crypto crypto;
         Files files;
-        string dir = @"Nowy plik.txt";
+        string dir = String.Empty;
         String path = String.Empty;
         public Form1()
         {
@@ -141,15 +141,6 @@ namespace Notatnik
             }
 
         }
-        public void openWelcome()
-        {
-            OpenFileDialog openFile = new OpenFileDialog();
-            textBox.TextChanged -= textBox_TextChanged;
-            textBox.Text = files.OpenFile(openFile.FileName);
-            textBox.TextChanged += textBox_TextChanged;
-            UpdateView();
-            textBox.Visible = false;
-        }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -170,10 +161,7 @@ namespace Notatnik
                         UpdateView();
                     }
                 }
-            }
-           
-            
-            
+            }   
         }
 
         private void SaveFile()
@@ -247,7 +235,7 @@ namespace Notatnik
 
         #endregion
 
-        private void textBox_TextChanged(object sender, EventArgs e)
+        public void textBox_TextChanged(object sender, EventArgs e)
         {
             files.IsFileSaved = false;
             UpdateView();
