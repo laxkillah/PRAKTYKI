@@ -21,8 +21,7 @@ namespace Notatnik
     {
         Crypto crypto;
         Files files;
-        string dir = String.Empty;
-        String path = String.Empty;
+        string dir;
         public Form1()
         {
             InitializeComponent();
@@ -128,23 +127,34 @@ namespace Notatnik
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Title = "Otwórz plik";
-            openFile.Filter = "Wszystkie pliki| *";
-            if (openFile.ShowDialog() == DialogResult.OK)
+            if (passwordBox.Text == "")
             {
-                textBox.TextChanged -= textBox_TextChanged;
-                textBox.Text = files.OpenFile(openFile.FileName);
-                textBox.TextChanged += textBox_TextChanged;
-                UpdateView();
-                textBox.Visible = false;
+                MessageBox.Show("Wprowadź hasło by zdeszyfrować");
             }
+            else
+            {
+                OpenFileDialog openFile = new OpenFileDialog();
+                openFile.Title = "Otwórz plik";
+                openFile.Filter = "Wszystkie pliki| *";
+                if (openFile.ShowDialog() == DialogResult.OK)
+                {
+                    textBox.TextChanged -= textBox_TextChanged;
+                    textBox.Text = files.OpenFile(openFile.FileName);
+                    textBox.TextChanged += textBox_TextChanged;
+                    UpdateView();
+
+                }
+                crypto.Decrypt(textBox, passwordBox);
+            }
+            
 
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(!files.IsFileSaved)
+            crypto.Encrypt(textBox, passwordBox);
+            SaveFile();
+            if (!files.IsFileSaved)
             {
                 if(!this.Text.Contains("Bez tytułu.txt"))
                 {
@@ -161,7 +171,8 @@ namespace Notatnik
                         UpdateView();
                     }
                 }
-            }   
+            }
+            crypto.Decrypt(textBox, passwordBox);
         }
 
         private void SaveFile()
@@ -178,8 +189,10 @@ namespace Notatnik
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            crypto.Encrypt(textBox, passwordBox);
             SaveFile();
-            
+            crypto.Decrypt(textBox, passwordBox);
+
         }
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -300,10 +313,7 @@ namespace Notatnik
 
         private void decryptButton_Click(object sender, EventArgs e)
         {
-            if (passwordBox.Text != "")
-            {
-                
-            }
+            crypto.Decrypt(textBox, passwordBox);
         }
     }
 }

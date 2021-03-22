@@ -25,7 +25,7 @@ namespace Notatnik
         public bool IsFileSaved { get => isFileSaved; set => isFileSaved = value; }
         public string FileLocation { get => fileLocation; set => fileLocation = value; }
 
-
+        
         public void newFile()
         {
             this.FileName = "Bez tytułu.txt";

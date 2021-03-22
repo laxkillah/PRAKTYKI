@@ -70,7 +70,6 @@ namespace Notatnik
                 textBox.Text = files.OpenFile(openFile.FileName);
                 textBox.TextChanged += form1.textBox_TextChanged;
                 form1.UpdateView();
-                textBox.Visible = false;
             }
             
             this.Hide();
