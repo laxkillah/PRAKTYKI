@@ -62,20 +62,12 @@ namespace Notatnik
             this.pastecnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.textBox = new System.Windows.Forms.RichTextBox();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.decryptButton = new System.Windows.Forms.Button();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -323,62 +315,11 @@ namespace Notatnik
             this.textBox.Location = new System.Drawing.Point(12, 53);
             this.textBox.Name = "textBox";
             this.textBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.textBox.Size = new System.Drawing.Size(504, 372);
+            this.textBox.Size = new System.Drawing.Size(610, 372);
             this.textBox.TabIndex = 5;
             this.textBox.Tag = "";
             this.textBox.Text = "";
             this.textBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Location = new System.Drawing.Point(522, 53);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.listView1);
-            this.splitContainer1.Size = new System.Drawing.Size(266, 372);
-            this.splitContainer1.SplitterDistance = 107;
-            this.splitContainer1.TabIndex = 6;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(110, 372);
-            this.treeView1.TabIndex = 0;
-            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
-            this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(-3, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(177, 372);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Nazwa";
-            // 
-            // decryptButton
-            // 
-            this.decryptButton.Location = new System.Drawing.Point(314, 27);
-            this.decryptButton.Name = "decryptButton";
-            this.decryptButton.Size = new System.Drawing.Size(75, 23);
-            this.decryptButton.TabIndex = 8;
-            this.decryptButton.Text = "Deszyfruj";
-            this.decryptButton.UseVisualStyleBackColor = true;
-            this.decryptButton.Click += new System.EventHandler(this.decryptButton_Click);
             // 
             // passwordBox
             // 
@@ -396,15 +337,22 @@ namespace Notatnik
             this.label1.TabIndex = 10;
             this.label1.Text = "Hasło:";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(628, 53);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(160, 368);
+            this.listBox1.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.passwordBox);
-            this.Controls.Add(this.decryptButton);
-            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -416,10 +364,6 @@ namespace Notatnik
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,13 +402,9 @@ namespace Notatnik
         private System.Windows.Forms.ToolStripMenuItem pastecnToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.RichTextBox textBox;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.Button decryptButton;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

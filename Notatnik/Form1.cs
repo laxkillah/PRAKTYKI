@@ -21,50 +21,16 @@ namespace Notatnik
     {
         Crypto crypto;
         Files files;
-        string dir;
         public Form1()
         {
             InitializeComponent();
-            PopulateTreeView();
             files = new Files();
             files.newFile();
             this.Text = files.FileName;
             crypto = new Crypto();
-            
-
-        }
-        private void PopulateTreeView()
-        {
-            TreeNode rootNode;
-
-            DirectoryInfo info = new DirectoryInfo(@".. /..");
-            if (info.Exists)
-            {
-                rootNode = new TreeNode(info.Name);
-                rootNode.Tag = info;
-                GetDirectories(info.GetDirectories(), rootNode);
-                treeView1.Nodes.Add(rootNode);
-            }
-        }
-
-        private void GetDirectories(DirectoryInfo[] subDirs,
-            TreeNode nodeToAddTo)
-        {
-            TreeNode aNode;
-            DirectoryInfo[] subSubDirs;
-            foreach (DirectoryInfo subDir in subDirs)
-            {
-                aNode = new TreeNode(subDir.Name, 0, 0);
-                aNode.Tag = subDir;
-                aNode.ImageKey = "folder";
-                subSubDirs = subDir.GetDirectories();
-                if (subSubDirs.Length != 0)
-                {
-                    GetDirectories(subSubDirs, aNode);
-                }
-                nodeToAddTo.Nodes.Add(aNode);
-            }
-        }
+            crypto.Encrypt(textBox, passwordBox);
+            crypto.Decrypt(textBox, passwordBox);
+        } 
         private DialogResult youWantSave()
         {
             DialogResult odp = MessageBox.Show("Chcesz zapisać zmiany?", "Notatnik",
@@ -125,7 +91,7 @@ namespace Notatnik
             this.Text = !files.IsFileSaved ? files.FileName + "*" : files.FileName;
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        public void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (passwordBox.Text == "")
             {
@@ -136,43 +102,49 @@ namespace Notatnik
                 OpenFileDialog openFile = new OpenFileDialog();
                 openFile.Title = "Otwórz plik";
                 openFile.Filter = "Wszystkie pliki| *";
+                openFile.ValidateNames = false;
+                openFile.CheckFileExists = false;
+                openFile.CheckPathExists = true;
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
                     textBox.TextChanged -= textBox_TextChanged;
                     textBox.Text = files.OpenFile(openFile.FileName);
                     textBox.TextChanged += textBox_TextChanged;
+                    listBox1.Items.Add(openFile.FileName);
                     UpdateView();
-
                 }
-                crypto.Decrypt(textBox, passwordBox);
             }
-            
-
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            crypto.Encrypt(textBox, passwordBox);
-            SaveFile();
-            if (!files.IsFileSaved)
+            if (passwordBox.Text == "")
             {
-                if(!this.Text.Contains("Bez tytułu.txt"))
+                MessageBox.Show("Wprowadź hasło by zaszyfrować");
+            }
+            else
+            {
+                crypto.Encrypt(textBox, passwordBox);
+                SaveFile();
+                if (!files.IsFileSaved)
                 {
-                    files.SaveFile(files.FileLocation, textBox.Lines);
-                    UpdateView();
-                }
-                else
-                {
-                    SaveFileDialog fileSave = new SaveFileDialog();
-                    fileSave.Filter = "Nazwa pliku|*";
-                    if(fileSave.ShowDialog() == DialogResult.OK)
+                    if (!this.Text.Contains("Bez tytułu.txt"))
                     {
-                        files.SaveFile(fileSave.FileName, textBox.Lines);
+                        files.SaveFile(files.FileLocation, textBox.Lines);
                         UpdateView();
+                    }
+                    else
+                    {
+                        SaveFileDialog fileSave = new SaveFileDialog();
+                        fileSave.Filter = "Nazwa pliku|*";
+                        if (fileSave.ShowDialog() == DialogResult.OK)
+                        {
+                            files.SaveFile(fileSave.FileName, textBox.Lines);
+                            UpdateView();
+                        }
                     }
                 }
             }
-            crypto.Decrypt(textBox, passwordBox);
         }
 
         private void SaveFile()
@@ -191,7 +163,6 @@ namespace Notatnik
         {
             crypto.Encrypt(textBox, passwordBox);
             SaveFile();
-            crypto.Decrypt(textBox, passwordBox);
 
         }
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -252,68 +223,6 @@ namespace Notatnik
         {
             files.IsFileSaved = false;
             UpdateView();
-        }
-
-        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            TreeNode newSelected = e.Node;
-            listView1.Items.Clear();
-            DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
-            ListViewItem.ListViewSubItem[] subItems;
-            ListViewItem item = null;
-
-            foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
-            {
-                item = new ListViewItem(dir.Name, 0);
-                subItems = new ListViewItem.ListViewSubItem[]
-                    {new ListViewItem.ListViewSubItem(item, "Directory"),
-             new ListViewItem.ListViewSubItem(item,
-                dir.LastAccessTime.ToShortDateString())};
-                item.SubItems.AddRange(subItems);
-                listView1.Items.Add(item);
-            }
-            foreach (FileInfo file in nodeDirInfo.GetFiles())
-            {
-                item = new ListViewItem(file.Name, 1);
-                subItems = new ListViewItem.ListViewSubItem[]
-                    { new ListViewItem.ListViewSubItem(item, "File"),
-             new ListViewItem.ListViewSubItem(item,
-                file.LastAccessTime.ToShortDateString())};
-
-                item.SubItems.AddRange(subItems);
-                listView1.Items.Add(item);
-            }
-
-            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-        }
-
-        private void treeView1_DoubleClick(object sender, EventArgs e)
-        {
-            String TreeNodeName = treeView1.SelectedNode.ToString().Replace("TreeNode: ", String.Empty);
-            System.Diagnostics.Process.Start(dir + "\\" + TreeNodeName);
-            ListDirectory(treeView1, dir);
-        }
-        private static TreeNode CreateDirectoryNode(DirectoryInfo directoryInfo)
-        {
-            var directoryNode = new TreeNode(directoryInfo.Name);
-            foreach (var directory in directoryInfo.GetDirectories())
-                directoryNode.Nodes.Add(CreateDirectoryNode(directory));
-
-            foreach (var file in directoryInfo.GetFiles())
-                directoryNode.Nodes.Add(new TreeNode(file.Name));
-
-            return directoryNode;
-        }
-        private void ListDirectory(TreeView treeview1, string dir)
-        {
-            treeView1.Nodes.Clear();
-            var rootDirectoryInfo = new DirectoryInfo(dir);
-            treeView1.Nodes.Add(CreateDirectoryNode(rootDirectoryInfo));
-        }
-
-        private void decryptButton_Click(object sender, EventArgs e)
-        {
-            crypto.Decrypt(textBox, passwordBox);
         }
     }
 }

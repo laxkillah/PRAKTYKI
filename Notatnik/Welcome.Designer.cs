@@ -1,7 +1,9 @@
 ﻿
+using System.Windows.Forms;
+
 namespace Notatnik
 {
-    partial class Welcome
+    partial class Welcome : Form
     {
         /// <summary>
         /// Required designer variable.
