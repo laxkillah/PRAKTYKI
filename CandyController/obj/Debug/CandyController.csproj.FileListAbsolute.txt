@@ -2,3 +2,8 @@ C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyCo
 C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyController.Properties.Resources.resources
 C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyController.csproj.GenerateResource.cache
 C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyController.csproj.CoreCompileInputs.cache
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\bin\Debug\CandyController.exe.config
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\bin\Debug\CandyController.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\bin\Debug\CandyController.pdb
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyController.exe
+C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\CandyController\obj\Debug\CandyController.pdb
