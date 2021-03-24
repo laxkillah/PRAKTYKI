@@ -100,7 +100,7 @@ namespace klasa_guy
         {
             joe.ReceiveCash(bob.GiveCash(5));
             UpdateForm();
-        }
+        }//
     }
 
     

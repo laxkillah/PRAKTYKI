@@ -57,6 +57,6 @@ namespace Gra_w_literki
                 listBox1.Items.Add("Koniec gry");
                 timer1.Stop();
             }
-        }
+        } //
     }
 }

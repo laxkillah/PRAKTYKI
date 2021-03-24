@@ -54,7 +54,7 @@ namespace Clown
 
                 MessageBox.Show("Nazywam się " + Name + "i mam " + Height + " centymetrów wzrostu.");
 
-            }
+            } //
 
         }
     }

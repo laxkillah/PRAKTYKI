@@ -23,6 +23,6 @@ namespace tablice
             label4.Text = menu.GetMenuItem();
             label5.Text = menu.GetMenuItem();
             label6.Text = menu.GetMenuItem();
-        }
+        }//
     }
 }

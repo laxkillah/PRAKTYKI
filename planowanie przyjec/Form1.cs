@@ -45,6 +45,6 @@ namespace planowanie_przyjec
         {
             decimal Cost = dinnerParty.CalculateCost(healthyBox.Checked);
             costLabel.Text = Cost.ToString("c");
-        }
+        }//
     }
 }

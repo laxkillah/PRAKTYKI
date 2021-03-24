@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace WpfApp2
 {
-    /// <summary>
+    /// <summary> //
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window

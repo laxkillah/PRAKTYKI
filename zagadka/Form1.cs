@@ -46,6 +46,6 @@ namespace zagadka
         public string Hello()
         {
             return "witaaaj...";
-        }
+        }//
     }
 }

@@ -66,7 +66,7 @@ namespace planowanie_przyjec2
             tooLongLabel.Visible = birthdayParty.CakeWritingTooLong;
             decimal cost = birthdayParty.Cost;
             birthdayCost.Text = cost.ToString("c");
-        }
+        }//
     }
 }
 

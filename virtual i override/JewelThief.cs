@@ -11,6 +11,6 @@ namespace virtual_i_override
         {
             stolenJewels = safeContents;
             Console.WriteLine("Kradnę zawarość sejfu! " + stolenJewels.Sparkle());
-        }
+        }//
     }
 }

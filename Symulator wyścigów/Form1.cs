@@ -145,6 +145,6 @@ namespace Symulator_wyścigów
         {
             groupBox1.Enabled = false;
             timer1.Start();
-        }
+        }//
     }
 }

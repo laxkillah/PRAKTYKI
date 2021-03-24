@@ -56,6 +56,6 @@ namespace odbijające_etykiety
                     bouncers[i].Move();
                 }
             }
-        }
+        }//
     }
 }

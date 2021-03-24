@@ -45,7 +45,7 @@ namespace wyspy
 
             }
             MessageBox.Show(result);
-        }
+        }//
 
         
     }

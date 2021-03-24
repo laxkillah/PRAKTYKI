@@ -29,5 +29,5 @@ namespace farmer
             Console.WriteLine("Potrzebuje {0} worków paszy do wykarmienia {1} krów", farmer.BagsOfFeed, farmer.NumberOfCows);
 
         }
-    }
+    } //
 }

@@ -21,6 +21,6 @@ namespace Navigator
         {
             int len = Talker.BlahBlahBlah(textBox1.Text, (int)numericUpDown1.Value);
             MessageBox.Show("Długość wiadomości to " + len);
-        }
+        }//
     }
 }
