@@ -70,6 +70,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "typy wyliczeniowe", "typy w
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notatnik", "Notatnik\Notatnik.csproj", "{86915C70-FC75-478E-A41D-F17921B0457F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listy", "Listy\Listy.csproj", "{74B0AB42-072E-4BA8-A85E-311156B11DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listy2", "Listy2\Listy2.csproj", "{60C511A1-0CFC-428E-A71F-16453DBB477E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -200,6 +204,14 @@ Global
 		{86915C70-FC75-478E-A41D-F17921B0457F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86915C70-FC75-478E-A41D-F17921B0457F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86915C70-FC75-478E-A41D-F17921B0457F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74B0AB42-072E-4BA8-A85E-311156B11DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B0AB42-072E-4BA8-A85E-311156B11DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B0AB42-072E-4BA8-A85E-311156B11DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B0AB42-072E-4BA8-A85E-311156B11DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60C511A1-0CFC-428E-A71F-16453DBB477E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C511A1-0CFC-428E-A71F-16453DBB477E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C511A1-0CFC-428E-A71F-16453DBB477E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C511A1-0CFC-428E-A71F-16453DBB477E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
