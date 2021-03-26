@@ -19,6 +19,10 @@ namespace Listy2
             else
                 return 0;
         }
+        public override string ToString()
+        {
+            return Size + "-centymetrowa kaczka " + Kind.ToString();
+        }
     }
     public enum KindOfDuck
     {

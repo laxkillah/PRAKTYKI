@@ -7,6 +7,11 @@ namespace Listy2
     {
         static void Main(string[] args)
         {
+            DuckComparerBySize sizeComparer = new DuckComparerBySize();
+            DuckComparerByKind kindComparer = new DuckComparerByKind();
+            DuckComparer comparer = new DuckComparer();
+            Duck[] duckArray = new Duck[6];
+            duckArray.GetEnumerator();
             List<Duck> ducks = new List<Duck>()
             {
                 new Duck() {Kind = KindOfDuck.Mallard, Size = 17 },
@@ -16,17 +21,19 @@ namespace Listy2
                 new Duck() {Kind = KindOfDuck.Mallard, Size = 14 },
                 new Duck() {Kind = KindOfDuck.Decoy, Size = 13 },
             };
-            ducks.Sort();
-            Console.ReadKey();
-            DuckComparerBySize sizeComparer = new DuckComparerBySize();
-            ducks.Sort(sizeComparer);
+            comparer.SortBy = SortCriteria.KindThenSize;
+            ducks.Sort(comparer);
+            PrintDucks(ducks);
+            comparer.SortBy = SortCriteria.SizeThenKind;
+            ducks.Sort(comparer);
             PrintDucks(ducks);
         }
         public static void PrintDucks(List<Duck> ducks)
         {
             foreach (Duck duck in ducks)
-                Console.WriteLine(duck.Size.ToString() + "-centymetrowa kaczka " + duck.Kind.ToString());
-                Console.WriteLine("Koniec kaczek!");
+                Console.WriteLine(duck);
+            Console.WriteLine("Koniec kaczek!");
         }
+        
     }
 }
