@@ -82,6 +82,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Przeciążone metody", "Prz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dwie talie", "Dwie talie\Dwie talie.csproj", "{10B1192E-EC48-487E-A5FB-AF9C36F44A79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numery koszulek", "Numery koszulek\Numery koszulek.csproj", "{F00180EE-8EE5-40A1-9B5F-B5C011A7149C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idź na ryby", "Idź na ryby\Idź na ryby.csproj", "{0C134582-6C87-4C4D-892C-97D489B4FD91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -236,6 +240,14 @@ Global
 		{10B1192E-EC48-487E-A5FB-AF9C36F44A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10B1192E-EC48-487E-A5FB-AF9C36F44A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10B1192E-EC48-487E-A5FB-AF9C36F44A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F00180EE-8EE5-40A1-9B5F-B5C011A7149C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F00180EE-8EE5-40A1-9B5F-B5C011A7149C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F00180EE-8EE5-40A1-9B5F-B5C011A7149C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F00180EE-8EE5-40A1-9B5F-B5C011A7149C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C134582-6C87-4C4D-892C-97D489B4FD91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C134582-6C87-4C4D-892C-97D489B4FD91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C134582-6C87-4C4D-892C-97D489B4FD91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C134582-6C87-4C4D-892C-97D489B4FD91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
