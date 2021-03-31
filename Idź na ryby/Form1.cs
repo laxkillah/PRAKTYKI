@@ -20,6 +20,7 @@ namespace Idź_na_ryby
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            textProgress.Clear();
             if (String.IsNullOrEmpty(textName.Text))
             {
                 MessageBox.Show("Wpisz swoje imię", "Nie można jeszcze rozpocząć gry.");
@@ -55,9 +56,13 @@ namespace Idź_na_ryby
                 textProgress.Text += "Zwycięzcą jest... " + game.GetWinnerName();
                 textBooks.Text = game.DescribeBooks();
                 buttonAsk.Enabled = false;
+                buttonStart.Enabled = true;
+                textName.Enabled = true;
             }
             else
+            {
                 UpdateForm();
+            }
         }
     }
 }

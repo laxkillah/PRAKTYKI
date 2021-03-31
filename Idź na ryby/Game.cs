@@ -78,7 +78,7 @@ namespace Idź_na_ryby
             string whoHasWhichBooks = "";
             foreach (Values value in books.Keys)
                 whoHasWhichBooks += books[value].Name + " ma grupę "
-                    + Card.Plural(value, 0) + Environment.NewLine;
+                    + Card.Plural( value, 0) + Environment.NewLine;
             return whoHasWhichBooks;
         }
         public string GetWinnerName()
@@ -113,6 +113,7 @@ namespace Idź_na_ryby
                 return "Remis pomiędzy " + winnerList;
             else
                 return winnerList;
+            
         }
         public IEnumerable<string> GetPlayerCardNames()
         {

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Idź_na_ryby
 {
-    public partial class Card
+    public class Card
     {
+
         public Suits Suit { get; set; }
         public Values Value { get; set; }
         public Card(Suits suit, Values value)
@@ -24,14 +25,7 @@ namespace Idź_na_ryby
         private static string[] names2AndMore = new string[]
         {"", "asy", "dwójki", "trójki", "czwórki", "piątki", "szóstki", "siódemki",
              "ósemki", "dziewiątki", "dziesiątki", "walety", "damy", "króle"};
-        public static string Plural(Card.Values value, int count)
-        {
-            if (count == 0)
-                return names0[(int)value];
-            if (count == 1)
-                return names1[(int)value];
-            return names2AndMore[(int)value];
-        }
+        
         private static string[] suits = new string[] { "pik", "trefl", "karo", "kier" };
         private static string[] names = new string[]
             {"", "As", "Dwójka", "Trójka", "Czwórka", "Piątka", "Szóstka", "Siódemka",
@@ -43,7 +37,14 @@ namespace Idź_na_ryby
         {
             return Name;
         }
+        public static string Plural(Values value, int count)
+        {
+            if (count == 0)
+                return names0[(int)value];
+            if (count == 1)
+                return names1[(int)value];
+            return names2AndMore[(int)value];
+        }
 
-        
     }
 }
