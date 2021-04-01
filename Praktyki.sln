@@ -90,6 +90,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kolejki i stosy", "Kolejki\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drwale", "Drwale\Drwale.csproj", "{E8A0F909-E5D0-464E-B683-7AADD39DEF5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streamwrity", "StreamWriter\Streamwrity.csproj", "{8C865299-D2E6-4381-9A91-6FABF2CC6A47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -260,6 +262,10 @@ Global
 		{E8A0F909-E5D0-464E-B683-7AADD39DEF5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8A0F909-E5D0-464E-B683-7AADD39DEF5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8A0F909-E5D0-464E-B683-7AADD39DEF5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C865299-D2E6-4381-9A91-6FABF2CC6A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C865299-D2E6-4381-9A91-6FABF2CC6A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C865299-D2E6-4381-9A91-6FABF2CC6A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C865299-D2E6-4381-9A91-6FABF2CC6A47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
