@@ -5,7 +5,7 @@ namespace StreamWrity
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main2(string[] args)
         {
             //StreamWriter sw = new StreamWriter(@"c:\tajny_plan.txt");
             //sw.WriteLine("W jaki sposób pokonać Kapitana Wspaniałego?");
