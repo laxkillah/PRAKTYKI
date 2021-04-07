@@ -102,7 +102,7 @@ namespace Wymówki
                 DialogResult result = MessageBox.Show(
                     "Bieżąca wymówka nie została zapisana. Czy kontynuować?",
                     "Ostrzeżenie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result = DialogResult.No)
+                if (result == DialogResult.No)
                     return false;
             }
             return true;

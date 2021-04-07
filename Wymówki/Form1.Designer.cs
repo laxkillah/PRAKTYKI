@@ -43,6 +43,7 @@ namespace Wymówki
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.lastUsed = new System.Windows.Forms.DateTimePicker();
+            this.fileDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -148,11 +149,20 @@ namespace Wymówki
             this.lastUsed.Size = new System.Drawing.Size(286, 20);
             this.lastUsed.TabIndex = 10;
             // 
+            // fileDate
+            // 
+            this.fileDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.fileDate.Location = new System.Drawing.Point(115, 96);
+            this.fileDate.Name = "fileDate";
+            this.fileDate.Size = new System.Drawing.Size(286, 20);
+            this.fileDate.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 159);
+            this.Controls.Add(this.fileDate);
             this.Controls.Add(this.lastUsed);
             this.Controls.Add(this.randomExcuse);
             this.Controls.Add(this.open);
@@ -187,6 +197,7 @@ namespace Wymówki
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.DateTimePicker lastUsed;
+        private System.Windows.Forms.Label fileDate;
     }
 }
 
