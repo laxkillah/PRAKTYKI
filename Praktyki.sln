@@ -98,6 +98,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wymówki", "Wymówki\Wymów
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "instrukcja switch", "instrukcja switch\instrukcja switch.csproj", "{C6CB2FF9-058D-4B57-A08D-D6D5C03E9739}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zestaw kart", "Zestaw kart\Zestaw kart.csproj", "{FC129380-E1E6-4EDC-B8FA-E00A8E4B3289}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unicode", "Unicode\Unicode.csproj", "{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -284,6 +288,14 @@ Global
 		{C6CB2FF9-058D-4B57-A08D-D6D5C03E9739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6CB2FF9-058D-4B57-A08D-D6D5C03E9739}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6CB2FF9-058D-4B57-A08D-D6D5C03E9739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC129380-E1E6-4EDC-B8FA-E00A8E4B3289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC129380-E1E6-4EDC-B8FA-E00A8E4B3289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC129380-E1E6-4EDC-B8FA-E00A8E4B3289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC129380-E1E6-4EDC-B8FA-E00A8E4B3289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace klasa_guy
 {
@@ -30,6 +32,7 @@ namespace klasa_guy
             UpdateForm();
 
         }
+        [Serializable]
         public class Guy
         {
             public string Name;
@@ -101,6 +104,26 @@ namespace klasa_guy
             joe.ReceiveCash(bob.GiveCash(5));
             UpdateForm();
         }//
+
+        private void saveJoe_Click(object sender, EventArgs e)
+        {
+            using (Stream output = File.Create("Plik_faceta.dat"))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(output, joe);
+            }
+        }
+
+        private void loadJoe_Click(object sender, EventArgs e)
+        {
+            using (Stream input = File.OpenRead("Plik_faceta.dat"))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                joe = (Guy)formatter.Deserialize(input);
+            }
+            UpdateForm();
+        }
+        
     }
 
     

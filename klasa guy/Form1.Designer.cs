@@ -36,6 +36,8 @@ namespace klasa_guy
             this.bankCashLabel = new System.Windows.Forms.TextBox();
             this.joeGivesToBob = new System.Windows.Forms.Button();
             this.bobGivesToJoe = new System.Windows.Forms.Button();
+            this.saveJoe = new System.Windows.Forms.Button();
+            this.loadJoe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -102,11 +104,33 @@ namespace klasa_guy
             this.bobGivesToJoe.UseVisualStyleBackColor = true;
             this.bobGivesToJoe.Click += new System.EventHandler(this.bobGivesToJoe_Click);
             // 
+            // saveJoe
+            // 
+            this.saveJoe.Location = new System.Drawing.Point(225, 372);
+            this.saveJoe.Name = "saveJoe";
+            this.saveJoe.Size = new System.Drawing.Size(169, 32);
+            this.saveJoe.TabIndex = 7;
+            this.saveJoe.Text = "Zapisz Joego";
+            this.saveJoe.UseVisualStyleBackColor = true;
+            this.saveJoe.Click += new System.EventHandler(this.saveJoe_Click);
+            // 
+            // loadJoe
+            // 
+            this.loadJoe.Location = new System.Drawing.Point(466, 372);
+            this.loadJoe.Name = "loadJoe";
+            this.loadJoe.Size = new System.Drawing.Size(165, 31);
+            this.loadJoe.TabIndex = 8;
+            this.loadJoe.Text = "Wczytaj Joego";
+            this.loadJoe.UseVisualStyleBackColor = true;
+            this.loadJoe.Click += new System.EventHandler(this.loadJoe_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.loadJoe);
+            this.Controls.Add(this.saveJoe);
             this.Controls.Add(this.bobGivesToJoe);
             this.Controls.Add(this.joeGivesToBob);
             this.Controls.Add(this.bankCashLabel);
@@ -130,6 +154,8 @@ namespace klasa_guy
         private System.Windows.Forms.TextBox bankCashLabel;
         private System.Windows.Forms.Button joeGivesToBob;
         private System.Windows.Forms.Button bobGivesToJoe;
+        private System.Windows.Forms.Button saveJoe;
+        private System.Windows.Forms.Button loadJoe;
     }
 }
 
