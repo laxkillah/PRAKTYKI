@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Idź_na_ryby
+namespace Zestaw_kart
 {
+    [Serializable]
     public enum Values
     {
         Ace = 1,
         Two = 2,
         Three = 3,
-        Four = 4,
+        For = 4,
         Five = 5,
         Six = 6,
         Seven = 7,
