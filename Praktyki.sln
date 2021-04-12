@@ -102,6 +102,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zestaw kart", "Zestaw kart\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unicode", "Unicode\Unicode.csproj", "{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriterBinary", "BinaryWriter\WriterBinary.csproj", "{B8686887-21A8-463D-92A5-8D9C8466E0AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hexdumper", "hexdumper\hexdumper.csproj", "{DFCBE21B-37E4-464C-8845-F9EE435FC524}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -296,6 +300,14 @@ Global
 		{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8686887-21A8-463D-92A5-8D9C8466E0AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8686887-21A8-463D-92A5-8D9C8466E0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8686887-21A8-463D-92A5-8D9C8466E0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8686887-21A8-463D-92A5-8D9C8466E0AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFCBE21B-37E4-464C-8845-F9EE435FC524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFCBE21B-37E4-464C-8845-F9EE435FC524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFCBE21B-37E4-464C-8845-F9EE435FC524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFCBE21B-37E4-464C-8845-F9EE435FC524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
