@@ -124,7 +124,7 @@ namespace Gra_przygodowa
                     }
                     break;
                 case 8:
-                    Application.Exit()
+                    Application.Exit();
                     break;
 
 

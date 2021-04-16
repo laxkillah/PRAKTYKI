@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Gra_przygodowa
     abstract class Enemy : Mover
     {
         private const int NearPlayerDistance = 25;
-        public int HitPoint { get; private set; }
+        public int HitPoints { get; private set; }
         public bool Dead { get
             {
                 if (hitPoints <= 0) return true;
