@@ -1,9 +1,0 @@
-C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Clown\obj\Debug\Clown.csprojAssemblyReference.cache
-C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Clown\obj\Debug\Clown.Properties.Resources.resources
-C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Clown\obj\Debug\Clown.csproj.GenerateResource.cache
-C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Clown\obj\Debug\Clown.csproj.CoreCompileInputs.cache
-C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Clown\bin\Debug\Clown.exe.config
-C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Clown\bin\Debug\Clown.exe
-C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Clown\bin\Debug\Clown.pdb
-C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Clown\obj\Debug\Clown.exe
-C:\Users\mzdro\source\repos\laxkillah\PRAKTYKI\Clown\obj\Debug\Clown.pdb
