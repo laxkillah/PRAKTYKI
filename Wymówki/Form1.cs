@@ -60,8 +60,8 @@ namespace Wymówki
                 return;
             }
             saveFileDialog1.InitialDirectory = selectedFolder;
-            saveFileDialog1.Filter = "Pliki tekstowe (*.txt)|*.txt|Wszystkie pliki (*.*)|*.*";
-            saveFileDialog1.FileName = description.Text + ".txt";
+            saveFileDialog1.Filter = "Pliki wymówek (*.excuse)|*.excuse|Wszystkie pliki (*.*)|*.*";
+            saveFileDialog1.FileName = description.Text + ".excuse";
             DialogResult result = saveFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -76,8 +76,8 @@ namespace Wymówki
             if (CheckChanged())
             {
                 openFileDialog1.InitialDirectory = selectedFolder;
-                openFileDialog1.Filter = "Pliki tekstowe (*.txt)|*.txt|Wszystkie pliki (*.*)|*.*";
-                openFileDialog1.FileName = description.Text + ".txt";
+                openFileDialog1.Filter = "Pliki wymówek (*.excuse)|*.excuse|Wszystkie pliki (*.*)|*.*";
+                openFileDialog1.FileName = description.Text + ".excuse";
                 DialogResult result = openFileDialog1.ShowDialog();
                 if (result == DialogResult.OK)
                 {
