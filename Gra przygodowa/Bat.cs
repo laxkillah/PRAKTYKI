@@ -10,8 +10,8 @@ namespace Gra_przygodowa
     class Bat : Enemy
     {
         public Bat(Game game, Point location)
-            : base(game, location, 6)
-        { }
+            : base(game, location, 6) { }
+
         public override void Move(Random random)
         {
             if (HitPoints >= 1)
@@ -28,5 +28,6 @@ namespace Gra_przygodowa
                     game.HitPlayer(2, random);
             }
         }
+
     }
 }

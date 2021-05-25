@@ -29,166 +29,168 @@ namespace Gra_przygodowa
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.playerPicture = new System.Windows.Forms.PictureBox();
+            this.bat = new System.Windows.Forms.PictureBox();
+            this.ghost = new System.Windows.Forms.PictureBox();
+            this.ghoul = new System.Windows.Forms.PictureBox();
+            this.potionRed = new System.Windows.Forms.PictureBox();
+            this.potionBlue = new System.Windows.Forms.PictureBox();
+            this.sword = new System.Windows.Forms.PictureBox();
+            this.bow = new System.Windows.Forms.PictureBox();
+            this.mace = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.playerHitPoints = new System.Windows.Forms.Label();
+            this.batHitPoints = new System.Windows.Forms.Label();
+            this.ghostHitPoints = new System.Windows.Forms.Label();
+            this.ghoulHitPoints = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.downMoveButton = new System.Windows.Forms.Button();
+            this.rightMoveButton = new System.Windows.Forms.Button();
+            this.leftMoveButton = new System.Windows.Forms.Button();
+            this.upMoveButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.downAttackButton = new System.Windows.Forms.Button();
+            this.rightAttackButton = new System.Windows.Forms.Button();
+            this.leftAttackButton = new System.Windows.Forms.Button();
+            this.upAttackButton = new System.Windows.Forms.Button();
+            this.swordEq = new System.Windows.Forms.PictureBox();
+            this.bowEq = new System.Windows.Forms.PictureBox();
+            this.maceEq = new System.Windows.Forms.PictureBox();
+            this.potionRedEq = new System.Windows.Forms.PictureBox();
+            this.potionBlueEq = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.playerPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ghost)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ghoul)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potionRed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potionBlue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mace)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.swordEq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bowEq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maceEq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potionRedEq)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potionBlueEq)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // playerPicture
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.playerPicture.BackColor = System.Drawing.Color.Transparent;
+            this.playerPicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playerPicture.BackgroundImage")));
+            this.playerPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.playerPicture.Location = new System.Drawing.Point(12, 12);
+            this.playerPicture.Name = "playerPicture";
+            this.playerPicture.Size = new System.Drawing.Size(37, 42);
+            this.playerPicture.TabIndex = 0;
+            this.playerPicture.TabStop = false;
+            this.playerPicture.Visible = false;
             // 
-            // pictureBox2
+            // bat
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(55, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
+            this.bat.BackColor = System.Drawing.Color.Transparent;
+            this.bat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bat.BackgroundImage")));
+            this.bat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bat.Location = new System.Drawing.Point(55, 12);
+            this.bat.Name = "bat";
+            this.bat.Size = new System.Drawing.Size(37, 42);
+            this.bat.TabIndex = 1;
+            this.bat.TabStop = false;
+            this.bat.Visible = false;
             // 
-            // pictureBox3
+            // ghost
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(100, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Visible = false;
+            this.ghost.BackColor = System.Drawing.Color.Transparent;
+            this.ghost.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ghost.BackgroundImage")));
+            this.ghost.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ghost.Location = new System.Drawing.Point(100, 12);
+            this.ghost.Name = "ghost";
+            this.ghost.Size = new System.Drawing.Size(37, 42);
+            this.ghost.TabIndex = 2;
+            this.ghost.TabStop = false;
+            this.ghost.Visible = false;
             // 
-            // pictureBox4
+            // ghoul
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(142, 12);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
+            this.ghoul.BackColor = System.Drawing.Color.Transparent;
+            this.ghoul.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ghoul.BackgroundImage")));
+            this.ghoul.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ghoul.Location = new System.Drawing.Point(142, 12);
+            this.ghoul.Name = "ghoul";
+            this.ghoul.Size = new System.Drawing.Size(37, 42);
+            this.ghoul.TabIndex = 3;
+            this.ghoul.TabStop = false;
+            this.ghoul.Visible = false;
             // 
-            // pictureBox5
+            // potionRed
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(185, 12);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Visible = false;
+            this.potionRed.BackColor = System.Drawing.Color.Transparent;
+            this.potionRed.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("potionRed.BackgroundImage")));
+            this.potionRed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.potionRed.Location = new System.Drawing.Point(185, 12);
+            this.potionRed.Name = "potionRed";
+            this.potionRed.Size = new System.Drawing.Size(37, 42);
+            this.potionRed.TabIndex = 4;
+            this.potionRed.TabStop = false;
+            this.potionRed.Visible = false;
             // 
-            // pictureBox6
+            // potionBlue
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(228, 12);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Visible = false;
+            this.potionBlue.BackColor = System.Drawing.Color.Transparent;
+            this.potionBlue.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("potionBlue.BackgroundImage")));
+            this.potionBlue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.potionBlue.Location = new System.Drawing.Point(228, 12);
+            this.potionBlue.Name = "potionBlue";
+            this.potionBlue.Size = new System.Drawing.Size(37, 42);
+            this.potionBlue.TabIndex = 5;
+            this.potionBlue.TabStop = false;
+            this.potionBlue.Visible = false;
             // 
-            // pictureBox7
+            // sword
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(271, 12);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Visible = false;
+            this.sword.BackColor = System.Drawing.Color.Transparent;
+            this.sword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sword.BackgroundImage")));
+            this.sword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sword.Location = new System.Drawing.Point(271, 12);
+            this.sword.Name = "sword";
+            this.sword.Size = new System.Drawing.Size(37, 42);
+            this.sword.TabIndex = 6;
+            this.sword.TabStop = false;
+            this.sword.Visible = false;
             // 
-            // pictureBox8
+            // bow
             // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(314, 12);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox8.TabIndex = 7;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Visible = false;
+            this.bow.BackColor = System.Drawing.Color.Transparent;
+            this.bow.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bow.BackgroundImage")));
+            this.bow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bow.Location = new System.Drawing.Point(314, 12);
+            this.bow.Name = "bow";
+            this.bow.Size = new System.Drawing.Size(37, 42);
+            this.bow.TabIndex = 7;
+            this.bow.TabStop = false;
+            this.bow.Visible = false;
             // 
-            // pictureBox9
+            // mace
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.BackgroundImage")));
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(357, 12);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(37, 42);
-            this.pictureBox9.TabIndex = 8;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Visible = false;
+            this.mace.BackColor = System.Drawing.Color.Transparent;
+            this.mace.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mace.BackgroundImage")));
+            this.mace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mace.Location = new System.Drawing.Point(357, 12);
+            this.mace.Name = "mace";
+            this.mace.Size = new System.Drawing.Size(37, 42);
+            this.mace.TabIndex = 8;
+            this.mace.TabStop = false;
+            this.mace.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -200,10 +202,10 @@ namespace Gra_przygodowa
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.playerHitPoints, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.batHitPoints, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ghostHitPoints, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ghoulHitPoints, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(623, 196);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -251,13 +253,49 @@ namespace Gra_przygodowa
             this.label4.TabIndex = 3;
             this.label4.Text = "Upiór";
             // 
+            // playerHitPoints
+            // 
+            this.playerHitPoints.AutoSize = true;
+            this.playerHitPoints.Location = new System.Drawing.Point(69, 0);
+            this.playerHitPoints.Name = "playerHitPoints";
+            this.playerHitPoints.Size = new System.Drawing.Size(55, 12);
+            this.playerHitPoints.TabIndex = 4;
+            this.playerHitPoints.Text = "playerHitPoints";
+            // 
+            // batHitPoints
+            // 
+            this.batHitPoints.AutoSize = true;
+            this.batHitPoints.Location = new System.Drawing.Point(69, 12);
+            this.batHitPoints.Name = "batHitPoints";
+            this.batHitPoints.Size = new System.Drawing.Size(59, 11);
+            this.batHitPoints.TabIndex = 5;
+            this.batHitPoints.Text = "batHitPoints";
+            // 
+            // ghostHitPoints
+            // 
+            this.ghostHitPoints.AutoSize = true;
+            this.ghostHitPoints.Location = new System.Drawing.Point(69, 23);
+            this.ghostHitPoints.Name = "ghostHitPoints";
+            this.ghostHitPoints.Size = new System.Drawing.Size(59, 11);
+            this.ghostHitPoints.TabIndex = 6;
+            this.ghostHitPoints.Text = "ghostHitPoints";
+            // 
+            // ghoulHitPoints
+            // 
+            this.ghoulHitPoints.AutoSize = true;
+            this.ghoulHitPoints.Location = new System.Drawing.Point(69, 34);
+            this.ghoulHitPoints.Name = "ghoulHitPoints";
+            this.ghoulHitPoints.Size = new System.Drawing.Size(59, 13);
+            this.ghoulHitPoints.TabIndex = 7;
+            this.ghoulHitPoints.Text = "ghoulHitPoints";
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.downMoveButton);
+            this.groupBox1.Controls.Add(this.rightMoveButton);
+            this.groupBox1.Controls.Add(this.leftMoveButton);
+            this.groupBox1.Controls.Add(this.upMoveButton);
             this.groupBox1.Location = new System.Drawing.Point(463, 314);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(126, 87);
@@ -265,49 +303,49 @@ namespace Gra_przygodowa
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ruch";
             // 
-            // button1
+            // downMoveButton
             // 
-            this.button1.Location = new System.Drawing.Point(50, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "↑";
-            this.button1.UseVisualStyleBackColor = true;
+            this.downMoveButton.Location = new System.Drawing.Point(50, 48);
+            this.downMoveButton.Name = "downMoveButton";
+            this.downMoveButton.Size = new System.Drawing.Size(22, 23);
+            this.downMoveButton.TabIndex = 3;
+            this.downMoveButton.Text = "↓";
+            this.downMoveButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // rightMoveButton
             // 
-            this.button2.Location = new System.Drawing.Point(22, 33);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(22, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "←";
-            this.button2.UseVisualStyleBackColor = true;
+            this.rightMoveButton.Location = new System.Drawing.Point(78, 33);
+            this.rightMoveButton.Name = "rightMoveButton";
+            this.rightMoveButton.Size = new System.Drawing.Size(22, 23);
+            this.rightMoveButton.TabIndex = 2;
+            this.rightMoveButton.Text = "→";
+            this.rightMoveButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // leftMoveButton
             // 
-            this.button3.Location = new System.Drawing.Point(78, 33);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(22, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "→";
-            this.button3.UseVisualStyleBackColor = true;
+            this.leftMoveButton.Location = new System.Drawing.Point(22, 33);
+            this.leftMoveButton.Name = "leftMoveButton";
+            this.leftMoveButton.Size = new System.Drawing.Size(22, 23);
+            this.leftMoveButton.TabIndex = 1;
+            this.leftMoveButton.Text = "←";
+            this.leftMoveButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // upMoveButton
             // 
-            this.button4.Location = new System.Drawing.Point(50, 48);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(22, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "↓";
-            this.button4.UseVisualStyleBackColor = true;
+            this.upMoveButton.Location = new System.Drawing.Point(50, 19);
+            this.upMoveButton.Name = "upMoveButton";
+            this.upMoveButton.Size = new System.Drawing.Size(22, 23);
+            this.upMoveButton.TabIndex = 0;
+            this.upMoveButton.Text = "↑";
+            this.upMoveButton.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Controls.Add(this.downAttackButton);
+            this.groupBox2.Controls.Add(this.rightAttackButton);
+            this.groupBox2.Controls.Add(this.leftAttackButton);
+            this.groupBox2.Controls.Add(this.upAttackButton);
             this.groupBox2.Location = new System.Drawing.Point(611, 314);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(126, 87);
@@ -315,132 +353,105 @@ namespace Gra_przygodowa
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Atak";
             // 
-            // button5
+            // downAttackButton
             // 
-            this.button5.Location = new System.Drawing.Point(50, 48);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(22, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "↓";
-            this.button5.UseVisualStyleBackColor = true;
+            this.downAttackButton.Location = new System.Drawing.Point(50, 48);
+            this.downAttackButton.Name = "downAttackButton";
+            this.downAttackButton.Size = new System.Drawing.Size(22, 23);
+            this.downAttackButton.TabIndex = 3;
+            this.downAttackButton.Text = "↓";
+            this.downAttackButton.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // rightAttackButton
             // 
-            this.button6.Location = new System.Drawing.Point(78, 33);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(22, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "→";
-            this.button6.UseVisualStyleBackColor = true;
+            this.rightAttackButton.Location = new System.Drawing.Point(78, 33);
+            this.rightAttackButton.Name = "rightAttackButton";
+            this.rightAttackButton.Size = new System.Drawing.Size(22, 23);
+            this.rightAttackButton.TabIndex = 2;
+            this.rightAttackButton.Text = "→";
+            this.rightAttackButton.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // leftAttackButton
             // 
-            this.button7.Location = new System.Drawing.Point(22, 33);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(22, 23);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "←";
-            this.button7.UseVisualStyleBackColor = true;
+            this.leftAttackButton.Location = new System.Drawing.Point(22, 33);
+            this.leftAttackButton.Name = "leftAttackButton";
+            this.leftAttackButton.Size = new System.Drawing.Size(22, 23);
+            this.leftAttackButton.TabIndex = 1;
+            this.leftAttackButton.Text = "←";
+            this.leftAttackButton.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // upAttackButton
             // 
-            this.button8.Location = new System.Drawing.Point(50, 19);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(22, 23);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "↑";
-            this.button8.UseVisualStyleBackColor = true;
+            this.upAttackButton.Location = new System.Drawing.Point(50, 19);
+            this.upAttackButton.Name = "upAttackButton";
+            this.upAttackButton.Size = new System.Drawing.Size(22, 23);
+            this.upAttackButton.TabIndex = 0;
+            this.upAttackButton.Text = "↑";
+            this.upAttackButton.UseVisualStyleBackColor = true;
             // 
-            // pictureBox10
+            // swordEq
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox10.BackgroundImage")));
-            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox10.Location = new System.Drawing.Point(12, 324);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(65, 61);
-            this.pictureBox10.TabIndex = 12;
-            this.pictureBox10.TabStop = false;
+            this.swordEq.BackColor = System.Drawing.Color.Transparent;
+            this.swordEq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("swordEq.BackgroundImage")));
+            this.swordEq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.swordEq.Location = new System.Drawing.Point(12, 324);
+            this.swordEq.Name = "swordEq";
+            this.swordEq.Size = new System.Drawing.Size(65, 61);
+            this.swordEq.TabIndex = 12;
+            this.swordEq.TabStop = false;
+            this.swordEq.Click += new System.EventHandler(this.swordEq_Click);
             // 
-            // pictureBox11
+            // bowEq
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
-            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox11.Location = new System.Drawing.Point(100, 324);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(65, 61);
-            this.pictureBox11.TabIndex = 13;
-            this.pictureBox11.TabStop = false;
+            this.bowEq.BackColor = System.Drawing.Color.Transparent;
+            this.bowEq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bowEq.BackgroundImage")));
+            this.bowEq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bowEq.Location = new System.Drawing.Point(100, 324);
+            this.bowEq.Name = "bowEq";
+            this.bowEq.Size = new System.Drawing.Size(65, 61);
+            this.bowEq.TabIndex = 13;
+            this.bowEq.TabStop = false;
+            this.bowEq.Click += new System.EventHandler(this.bowEq_Click);
             // 
-            // pictureBox12
+            // maceEq
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
-            this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox12.Location = new System.Drawing.Point(185, 324);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(65, 61);
-            this.pictureBox12.TabIndex = 14;
-            this.pictureBox12.TabStop = false;
+            this.maceEq.BackColor = System.Drawing.Color.Transparent;
+            this.maceEq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("maceEq.BackgroundImage")));
+            this.maceEq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.maceEq.Location = new System.Drawing.Point(185, 324);
+            this.maceEq.Name = "maceEq";
+            this.maceEq.Size = new System.Drawing.Size(65, 61);
+            this.maceEq.TabIndex = 14;
+            this.maceEq.TabStop = false;
+            this.maceEq.Click += new System.EventHandler(this.maceEq_Click);
             // 
-            // pictureBox13
+            // potionRedEq
             // 
-            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.BackgroundImage")));
-            this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox13.Location = new System.Drawing.Point(271, 324);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(65, 61);
-            this.pictureBox13.TabIndex = 15;
-            this.pictureBox13.TabStop = false;
+            this.potionRedEq.BackColor = System.Drawing.Color.Transparent;
+            this.potionRedEq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("potionRedEq.BackgroundImage")));
+            this.potionRedEq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.potionRedEq.Location = new System.Drawing.Point(271, 324);
+            this.potionRedEq.Name = "potionRedEq";
+            this.potionRedEq.Size = new System.Drawing.Size(65, 61);
+            this.potionRedEq.TabIndex = 15;
+            this.potionRedEq.TabStop = false;
+            this.potionRedEq.Click += new System.EventHandler(this.potionRedEq_Click);
             // 
-            // pictureBox14
+            // potionBlueEq
             // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.BackgroundImage")));
-            this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox14.Location = new System.Drawing.Point(357, 324);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(65, 61);
-            this.pictureBox14.TabIndex = 16;
-            this.pictureBox14.TabStop = false;
+            this.potionBlueEq.BackColor = System.Drawing.Color.Transparent;
+            this.potionBlueEq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("potionBlueEq.BackgroundImage")));
+            this.potionBlueEq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.potionBlueEq.Location = new System.Drawing.Point(357, 324);
+            this.potionBlueEq.Name = "potionBlueEq";
+            this.potionBlueEq.Size = new System.Drawing.Size(65, 61);
+            this.potionBlueEq.TabIndex = 16;
+            this.potionBlueEq.TabStop = false;
+            this.potionBlueEq.Click += new System.EventHandler(this.potionBlueEq_Click);
             // 
-            // label5
+            // timer1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(69, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 12);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "playerHitPoints";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(69, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 11);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "batHitPoints";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(69, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 11);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "ghostHitPoints";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(69, 34);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "ghoulHitPoints";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -449,84 +460,87 @@ namespace Gra_przygodowa
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(767, 407);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox14);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.playerPicture);
+            this.Controls.Add(this.potionBlueEq);
+            this.Controls.Add(this.potionRedEq);
+            this.Controls.Add(this.maceEq);
+            this.Controls.Add(this.bowEq);
+            this.Controls.Add(this.swordEq);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.potionBlue);
+            this.Controls.Add(this.potionRed);
+            this.Controls.Add(this.ghoul);
+            this.Controls.Add(this.ghost);
+            this.Controls.Add(this.bat);
+            this.Controls.Add(this.sword);
+            this.Controls.Add(this.bow);
+            this.Controls.Add(this.mace);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.playerPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ghost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ghoul)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potionRed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potionBlue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mace)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.swordEq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bowEq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maceEq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potionRedEq)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.potionBlueEq)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox playerPicture;
+        private System.Windows.Forms.PictureBox bat;
+        private System.Windows.Forms.PictureBox ghost;
+        private System.Windows.Forms.PictureBox ghoul;
+        private System.Windows.Forms.PictureBox potionRed;
+        private System.Windows.Forms.PictureBox potionBlue;
+        private System.Windows.Forms.PictureBox sword;
+        private System.Windows.Forms.PictureBox bow;
+        private System.Windows.Forms.PictureBox mace;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button downMoveButton;
+        private System.Windows.Forms.Button rightMoveButton;
+        private System.Windows.Forms.Button leftMoveButton;
+        private System.Windows.Forms.Button upMoveButton;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button downAttackButton;
+        private System.Windows.Forms.Button rightAttackButton;
+        private System.Windows.Forms.Button leftAttackButton;
+        private System.Windows.Forms.Button upAttackButton;
+        private System.Windows.Forms.PictureBox swordEq;
+        private System.Windows.Forms.PictureBox bowEq;
+        private System.Windows.Forms.PictureBox maceEq;
+        private System.Windows.Forms.PictureBox potionRedEq;
+        private System.Windows.Forms.PictureBox potionBlueEq;
+        private System.Windows.Forms.Label playerHitPoints;
+        private System.Windows.Forms.Label batHitPoints;
+        private System.Windows.Forms.Label ghostHitPoints;
+        private System.Windows.Forms.Label ghoulHitPoints;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
