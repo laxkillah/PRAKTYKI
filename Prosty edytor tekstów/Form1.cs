@@ -13,39 +13,17 @@ namespace Prosty_edytor_tekstów
 {
     public partial class Form1 : Form
     {
-        private string name;
-        public Form1()
+        private void openFileButton_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-            
-        }
-
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            openFileDialog1.ShowDialog();   
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK && openFileDialog1.FileName.Contains(".txt")) //Checks if it's all ok and if the file name contains .txt  
             {
-                name = openFileDialog1.FileName;
-                textBox1.Clear();
-                textBox1.Text = File.ReadAllText(name);
+                string open = File.ReadAllText(openFileDialog1.FileName);  
+                richTextBox1.Text = open;  
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            else  
             {
-                name = saveFileDialog1.FileName;
-                File.WriteAllText(name, textBox1.Text);
+                MessageBox.Show("The file you've chosen is not a text file");
             }
         }
     }

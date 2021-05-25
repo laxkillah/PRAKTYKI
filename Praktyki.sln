@@ -70,15 +70,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "typy wyliczeniowe", "typy w
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notatnik", "Notatnik\Notatnik.csproj", "{86915C70-FC75-478E-A41D-F17921B0457F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listy", "Listy\Listy.csproj", "{74B0AB42-072E-4BA8-A85E-311156B11DE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Listy", "Listy\Listy.csproj", "{74B0AB42-072E-4BA8-A85E-311156B11DE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listy2", "Listy2\Listy2.csproj", "{60C511A1-0CFC-428E-A71F-16453DBB477E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Listy2", "Listy2\Listy2.csproj", "{60C511A1-0CFC-428E-A71F-16453DBB477E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karty", "Karty\Karty.csproj", "{527021C9-D633-4CA3-9151-B98B2450EE51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Karty", "Karty\Karty.csproj", "{527021C9-D633-4CA3-9151-B98B2450EE51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ptaki", "Ptaki\Ptaki.csproj", "{0D84CC37-BFD5-4456-92A4-8B9028B9C987}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ptaki", "Ptaki\Ptaki.csproj", "{0D84CC37-BFD5-4456-92A4-8B9028B9C987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Przeciążone metody", "Przeciążone metody\Przeciążone metody.csproj", "{F68FF2B2-964F-47FC-98A8-7AF07D455508}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Przeciążone metody", "Przeciążone metody\Przeciążone metody.csproj", "{F68FF2B2-964F-47FC-98A8-7AF07D455508}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dwie talie", "Dwie talie\Dwie talie.csproj", "{10B1192E-EC48-487E-A5FB-AF9C36F44A79}"
 EndProject
@@ -90,23 +90,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kolejki i stosy", "Kolejki\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drwale", "Drwale\Drwale.csproj", "{E8A0F909-E5D0-464E-B683-7AADD39DEF5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streamwrity", "StreamWriter\Streamwrity.csproj", "{8C865299-D2E6-4381-9A91-6FABF2CC6A47}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prosty edytor tekstów", "Prosty edytor tekstów\Prosty edytor tekstów.csproj", "{102CC52D-6589-4522-9242-BE4B751B02E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Streamwrity", "StreamWriter\Streamwrity.csproj", "{8C865299-D2E6-4381-9A91-6FABF2CC6A47}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wymówki", "Wymówki\Wymówki.csproj", "{6105796C-4796-4DDB-BA5C-D3DA6396B609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "instrukcja switch", "instrukcja switch\instrukcja switch.csproj", "{C6CB2FF9-058D-4B57-A08D-D6D5C03E9739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "instrukcja switch", "instrukcja switch\instrukcja switch.csproj", "{C6CB2FF9-058D-4B57-A08D-D6D5C03E9739}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zestaw kart", "Zestaw kart\Zestaw kart.csproj", "{FC129380-E1E6-4EDC-B8FA-E00A8E4B3289}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unicode", "Unicode\Unicode.csproj", "{CFA87AC4-4C73-4E4C-86C3-6CBFD8B5B69A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriterBinary", "BinaryWriter\WriterBinary.csproj", "{B8686887-21A8-463D-92A5-8D9C8466E0AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriterBinary", "BinaryWriter\WriterBinary.csproj", "{B8686887-21A8-463D-92A5-8D9C8466E0AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hexdumper", "hexdumper\hexdumper.csproj", "{DFCBE21B-37E4-464C-8845-F9EE435FC524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "hexdumper", "hexdumper\hexdumper.csproj", "{DFCBE21B-37E4-464C-8845-F9EE435FC524}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gra przygodowa", "Gra przygodowa\Gra przygodowa.csproj", "{5A3B0879-B8A7-486A-A28A-5E51A43330AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edytor tekstu", "Edytor tekstu\Edytor tekstu.csproj", "{1585F3C3-821D-4EAC-9836-ABD275EF9333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterJSON-XML", "ConverterJSON-XML\ConverterJSON-XML.csproj", "{FF00D9CE-09B1-4D07-A484-BD1D45099D3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -282,10 +284,6 @@ Global
 		{8C865299-D2E6-4381-9A91-6FABF2CC6A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C865299-D2E6-4381-9A91-6FABF2CC6A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C865299-D2E6-4381-9A91-6FABF2CC6A47}.Release|Any CPU.Build.0 = Release|Any CPU
-		{102CC52D-6589-4522-9242-BE4B751B02E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{102CC52D-6589-4522-9242-BE4B751B02E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{102CC52D-6589-4522-9242-BE4B751B02E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{102CC52D-6589-4522-9242-BE4B751B02E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6105796C-4796-4DDB-BA5C-D3DA6396B609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6105796C-4796-4DDB-BA5C-D3DA6396B609}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6105796C-4796-4DDB-BA5C-D3DA6396B609}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -314,6 +312,14 @@ Global
 		{5A3B0879-B8A7-486A-A28A-5E51A43330AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A3B0879-B8A7-486A-A28A-5E51A43330AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A3B0879-B8A7-486A-A28A-5E51A43330AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1585F3C3-821D-4EAC-9836-ABD275EF9333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1585F3C3-821D-4EAC-9836-ABD275EF9333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1585F3C3-821D-4EAC-9836-ABD275EF9333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1585F3C3-821D-4EAC-9836-ABD275EF9333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF00D9CE-09B1-4D07-A484-BD1D45099D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF00D9CE-09B1-4D07-A484-BD1D45099D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF00D9CE-09B1-4D07-A484-BD1D45099D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF00D9CE-09B1-4D07-A484-BD1D45099D3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
