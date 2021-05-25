@@ -10,24 +10,38 @@ namespace Gra_przygodowa
     abstract class Enemy : Mover
     {
         private const int NearPlayerDistance = 25;
+
         public int HitPoints { get; private set; }
-        public bool Dead { get
+
+        public bool Dead
+        {
+            get
             {
-                if (hitPoints <= 0) return true;
+                if (HitPoints <= 0)
+                    return true;
                 else return false;
-            } }
+            }
+        }
+
         public Enemy(Game game, Point location, int hitPoints)
-            : base(game, location) { this.hitPoints = hitPoints; }
+            : base(game, location)
+        {
+            HitPoints = hitPoints;
+        }
+
         public abstract void Move(Random random);
+
         public void Hit(int maxDamage, Random random)
         {
             HitPoints -= random.Next(1, maxDamage);
         }
+
         protected bool NearPlayer()
         {
             return (Nearby(game.PlayerLocation, NearPlayerDistance));
         }
-        protected Direction FindPlayerDirection(EntryPointNotFoundException playerLocation)
+
+        protected Direction FindPlayerDirection(Point playerLocation)
         {
             Direction directionToMove;
             if (playerLocation.X > location.X + 10)
