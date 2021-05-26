@@ -36,6 +36,7 @@ namespace ConverterJSON_XML
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -82,7 +83,7 @@ namespace ConverterJSON_XML
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(256, 37);
             this.button4.TabIndex = 4;
-            this.button4.Text = "JSON -> XML";
+            this.button4.Text = "XML -> JSON";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -103,6 +104,10 @@ namespace ConverterJSON_XML
             this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Przekonwertuj plik:";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -132,6 +137,7 @@ namespace ConverterJSON_XML
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

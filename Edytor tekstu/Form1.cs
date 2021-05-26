@@ -20,13 +20,14 @@ namespace Edytor_tekstu
 
         private void openFileButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Title = "Otwórz plik";
             openFileDialog1.Filter = "Pliki tekstowe(*.txt)| *.txt";
-            openFileDialog1.ShowDialog();
-            string filename = openFileDialog1.FileName;
-            string readfile = File.ReadAllText(filename, Encoding.UTF8);
-            richTextBox1.Text = readfile;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Name = openFileDialog1.FileName;
+                richTextBox1.Clear();
+                richTextBox1.Text = File.ReadAllText(Name, Encoding.UTF8);
+            }
         }
 
         private void saveFileButton_Click(object sender, EventArgs e)
@@ -35,7 +36,8 @@ namespace Edytor_tekstu
             saveFileDialog1.Filter = "Pliki tekstowe(*.txt)| *.txt";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                richTextBox1.SaveFile(saveFileDialog1.FileName);
+                Name = saveFileDialog1.FileName;
+                File.WriteAllText(Name, richTextBox1.Text, Encoding.UTF8);
             }
         }
     }

@@ -110,6 +110,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edytor tekstu", "Edytor tek
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConverterJSON-XML", "ConverterJSON-XML\ConverterJSON-XML.csproj", "{FF00D9CE-09B1-4D07-A484-BD1D45099D3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageBrowser", "ImageBrowser\ImageBrowser.csproj", "{050E7A83-72FD-4AA5-8506-17FA3D4EAEEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -320,6 +322,10 @@ Global
 		{FF00D9CE-09B1-4D07-A484-BD1D45099D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF00D9CE-09B1-4D07-A484-BD1D45099D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF00D9CE-09B1-4D07-A484-BD1D45099D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{050E7A83-72FD-4AA5-8506-17FA3D4EAEEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{050E7A83-72FD-4AA5-8506-17FA3D4EAEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{050E7A83-72FD-4AA5-8506-17FA3D4EAEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{050E7A83-72FD-4AA5-8506-17FA3D4EAEEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
