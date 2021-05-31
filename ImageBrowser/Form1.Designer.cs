@@ -37,7 +37,6 @@ namespace ImageBrowser
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +102,6 @@ namespace ImageBrowser
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.loadButton);
             this.groupBox1.Controls.Add(this.folderButton);
             this.groupBox1.Controls.Add(this.previousButton);
@@ -115,13 +113,6 @@ namespace ImageBrowser
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wybierz";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(547, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(13, 20);
-            this.textBox1.TabIndex = 5;
             // 
             // Form1
             // 
@@ -148,7 +139,6 @@ namespace ImageBrowser
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

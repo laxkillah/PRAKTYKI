@@ -79,7 +79,7 @@ namespace ConverterJSON_XML
                 {
                     ConvertJSONtoXML();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Nieprawidłowy typ danych!");
                 }
@@ -95,7 +95,7 @@ namespace ConverterJSON_XML
                 {
                     ConvertXMLtoJSON();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Nieprawidłowy typ danych!");
                 }

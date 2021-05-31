@@ -14,7 +14,9 @@ namespace ImageBrowser
 {
     public partial class Form1 : Form
     {
-        string currentDir = "";
+        List<string> Imagefiles = new List<string>();
+        int imageCount = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -32,31 +34,59 @@ namespace ImageBrowser
 
         private void folderButton_Click(object sender, EventArgs e)
         {
-            try
+            using (var fbd = new FolderBrowserDialog())
             {
-                var fb = new FolderBrowserDialog();
-                if (fb.ShowDialog()==DialogResult.OK)
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
-                    currentDir = fb.SelectedPath;
-                    var dirInfo = new DirectoryInfo(currentDir);
-                    var files = dirInfo.GetFiles().Where(c=>c.Extension.Equals(".jpg") || c.Extension.Equals(".jpeg") || c.Extension.Equals(".bmp") || c.Extension.Equals(".png"));
-                    pictureBox1.Image = Image.FromFile(currentDir);
+                    findImagesInDirectory(fbd.SelectedPath);
                 }
             }
-            catch
-            {
-
-            }
         }
+        private void findImagesInDirectory(string path)
+        {
+            string[] files = Directory.GetFiles(path);
+            foreach (string s in files)
+            {
+                if (s.EndsWith(".jpg") || s.EndsWith(".jpeg") || s.EndsWith(".png") || s.EndsWith(".gif") || s.EndsWith(".bmp"))
+                {
+                    Imagefiles.Add(s);
+                }
+            }
+            try
+            {
+                pictureBox1.ImageLocation = Imagefiles.First();
+            }
+            catch { MessageBox.Show("Nie znaleziono obrazu"); }
 
+        }
         private void nextButton_Click(object sender, EventArgs e)
         {
-
+            if (imageCount + 1 == Imagefiles.Count)
+            {
+                MessageBox.Show("To ostatni obraz w tym katalogu!");
+            }
+            else
+            {
+                string nextImage = Imagefiles[imageCount + 1];
+                pictureBox1.ImageLocation = nextImage;
+                imageCount += 1;
+            }
         }
 
         private void previousButton_Click(object sender, EventArgs e)
         {
-
+            if (imageCount == 0)
+            {
+                MessageBox.Show("To pierwszy obraz w tym katalogu!");
+            }
+            else
+            {
+                string prevImage = Imagefiles[imageCount - 1];
+                pictureBox1.ImageLocation = prevImage;
+                imageCount -= 1;
+            }
         }
     }
 }
